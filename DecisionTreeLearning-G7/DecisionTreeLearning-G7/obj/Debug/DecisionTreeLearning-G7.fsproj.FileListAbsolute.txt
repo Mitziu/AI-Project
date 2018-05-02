@@ -1,0 +1,11 @@
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\DecisionTreeLearning_G7.exe.config
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\DecisionTreeLearning_G7.XML
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\DecisionTreeLearning_G7.exe
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\DecisionTreeLearning_G7.pdb
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\FSharp.Core.dll
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\System.ValueTuple.dll
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\bin\Debug\FSharp.Core.xml
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\obj\Debug\DecisionTreeLearning-G7.fsprojResolveAssemblyReference.cache
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\obj\Debug\DecisionTreeLearning-G7.fsproj.CopyComplete
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\obj\Debug\DecisionTreeLearning_G7.exe
+C:\Users\Mitziu\source\Github\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\obj\Debug\DecisionTreeLearning_G7.pdb
