@@ -2,6 +2,7 @@
                     ["yes";"sunny";"hot";"high";"true"]; // this would always be consistent no matter size of data
                     ["yes";"overcast";"hot";"high";"false"];
                     ["yes";"rainy";"mild";"high";"false"]]
+                    //Decision, Outlook, ???, Humidity, Wind
 
 let a = 'a'
 
@@ -23,7 +24,7 @@ let Humidity = InnerNode("humidity", Map.empty.Add("high", No).Add("normal", Yes
 
 let Wind = InnerNode("wind", Map.empty.Add("true", No).Add("false", Yes))
 
-let Outlook = InnerNode("outlook", Map.empty.Add("sunny", Humidity).Add("overcast", Yes).Add("rainiy", Wind))
+let Outlook = InnerNode("outlook", Map.empty.Add("sunny", Humidity).Add("overcast", Yes).Add("rainy", Wind))
 
 let rec classify (node:DecisionTree) (row:string list) (indexMap: Map<string, int>): string=
     match node with
@@ -34,3 +35,5 @@ let rec classify (node:DecisionTree) (row:string list) (indexMap: Map<string, in
         let newNode = (Map.find attributeValue attributeMap)
         classify newNode row indexMap
         
+let classifyAllRows (data:string list list) (root:DecisionTree) (indexMap: Map<string, int>): string list =
+    data |> List.map (fun row -> classify root row indexMap)
