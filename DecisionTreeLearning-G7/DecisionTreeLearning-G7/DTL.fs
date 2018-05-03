@@ -25,11 +25,6 @@ type DecisionTree =
     | InnerNode of attribute : string * subtrees : Map<string,DecisionTree>
     | LeafNode of classification : string
 
-// CountBy counts number of occurances by each key, sort by sorts by 2nd element (descending)
-//let asdf = [1;2;3;4;4;4;2;2;2] |> List.countBy (fun s -> s) |> List.sortBy (fun (_, y) -> -y)
-// fst is a function that lets you access the first element of a tuple
-//fst asdf.Head
-
 //Extracts all of the classes in an example set
 //@examples: The example set you want classes from
 let getClasses (examples : 'a list list) =
