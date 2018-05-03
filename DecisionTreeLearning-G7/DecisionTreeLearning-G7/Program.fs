@@ -3,5 +3,5 @@
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" argv
+    printfn "%A" "This is a test!"
     0 // return an integer exit code
