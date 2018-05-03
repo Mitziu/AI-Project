@@ -1,4 +1,5 @@
 ﻿open System
+open MathNet.Numerics
 
 let mockAttributes = Map.empty.
                         Add("outlook",["sunny";"overcast";"rainy"]).
@@ -6,8 +7,17 @@ let mockAttributes = Map.empty.
                         Add("humidity",["high";"normal"]).
                         Add("windy",["false";"true"])
 
-let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\Documents\Stuff\School\Spring 2018\tennis.txt") |>
+let tennisAttributes = Map.empty.
+                        Add("outlook",["sunny";"overcast";"rainy"]).
+                        Add("temp",["hot";"mild";"cool"]).
+                        Add("humidity",["high";"normal"]).
+                        Add("windy",["false";"true"])
+
+// My test of the classification
+(*let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\Documents\Stuff\School\Spring 2018\tennis.txt") |>
                      Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
+*) 
+
 // This is a really bad way to do it right now, but I need some map from class to its attributes,
 // along a way to know which one is "positive" (or do I)? Either way, I'll treat the 0th index as the positive value.
 // UPDATE: It doesn't matter
@@ -126,10 +136,11 @@ let rec createSubtree (examples : string list list) (attributes : Map<string, st
     // Convert the list of tuples into a map, and make create the InnerNode for the split
     InnerNode(attribute,Map.ofList(zipped))
 
+// HOW TO CALL : dtl examples attributes [] indexMap
 and dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
     if examples.IsEmpty then LeafNode (plurality parentExamples index)
-    elif sameClassification examples index then LeafNode (examples.Head.Head)
+    elif sameClassification examples index then LeafNode (examples.Head.[index.["class"]])
     elif Map.isEmpty attributes then LeafNode (plurality parentExamples index)
     else createSubtree examples attributes index
 
@@ -166,7 +177,7 @@ let classifyAllRows (data:string list list) (root:DecisionTree) (indexMap: Map<s
 //@groundTruth: List of strings that will be used to check accuracy
 let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<string, int>) = 
     let testDataResults = classifyAllRows testData root indexMap
-    let groundTruth = testData |> List.map (fun row -> row.[0])
+    let groundTruth = testData |> List.map (fun row -> row.[indexMap.["class"]])
     printfn "%A" testDataResults
     printfn "%A" groundTruth
     let result = List.map2 (fun a b -> a = b) testDataResults groundTruth
