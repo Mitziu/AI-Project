@@ -6,6 +6,8 @@ let mockAttributes = Map.empty.
                         Add("humidity",["high";"normal"]).
                         Add("windy",["false";"true"])
 
+let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\Documents\Stuff\School\Spring 2018\tennis.txt") |>
+                     Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 // This is a really bad way to do it right now, but I need some map from class to its attributes,
 // along a way to know which one is "positive" (or do I)? Either way, I'll treat the 0th index as the positive value.
 // UPDATE: It doesn't matter
@@ -19,7 +21,8 @@ let mockExamples = [["no";"sunny";"cold";"high";"true"]; // currently guessing t
 // Do we want to add an index for the class in the mock index?
 // Main issue right now is getting the class variable in -- I need to know its domain,
 // but it needs to be not in (or removed) from the attributes data structure
-let mockIndex = Map.empty.Add("outlook", 1).Add("temp",2).Add("humidity", 3).Add("windy", 4)
+let mockIndex = Map.empty.Add("outlook", 1).Add("temp",2).Add("humidity", 3).Add("windy", 4).Add("class",0)
+let tennisIndex = Map.empty.Add("outlook", 0).Add("temp",1).Add("humidity", 2).Add("windy", 3).Add("class",4)
 
 type DecisionTree =
     | InnerNode of attribute : string * subtrees : Map<string,DecisionTree>
@@ -27,38 +30,38 @@ type DecisionTree =
 
 //Extracts all of the classes in an example set
 //@examples: The example set you want classes from
-let getClasses (examples : 'a list list) =
-    List.map (fun (l : 'a list) -> l.Head) examples
+let getClasses (examples : 'a list list) (index : Map<string,int>) =
+    List.map (fun (l : 'a list) -> l.[index.["class"]]) examples
 
 //Finds the most common class in an example set
 //@examples: The example set you want classes from
-let plurality (examples : 'a list list) =
-    let classes = getClasses examples
+let plurality (examples : 'a list list) (index : Map<string,int>) =
+    let classes = getClasses examples index
     let majorityList = List.countBy (fun s -> s) classes |> List.sortBy (fun (_, y) -> -y)
     fst majorityList.Head
 
 //Checks to see if all classes in remaining rows are the same
 //@examples: The example set you want to check
-let sameClassification (examples : 'a list list) =
-    let classes = getClasses examples
+let sameClassification (examples : 'a list list) (index : Map<string,int>) =
+    let classes = getClasses examples index
     List.forall (fun x -> x = classes.Head) classes
 
 //What percent of an attribute has a given value (pk + nk / p + n)
 //@attribute: The attribute you are checking
 //@value: The value of the attribute you are checking
 //@examples: The rows in your data
-let percentValue (attribute : string) (value : string) (examples : string list list) =
+let percentValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) =
     // First line calculates (pk + nk), second line (p + n)
-    let examplesWithValue = List.filter (fun (row : string list) -> row.[mockIndex.[attribute]] = value) examples in
+    let examplesWithValue = List.filter (fun (row : string list) -> row.[index.[attribute]] = value) examples in
     (float) examplesWithValue.Length / (float) examples.Length
 
 //Of those with an give attribute value, what percent are positive (pk / pk + nk)
 //@attribute: The attribute you are checking
 //@value: The value of the attribute you are checking
 //@examples: The rows in your data
-let percentAttributesPositive (attribute : string) (value : string) (examples : string list list) = 
+let percentAttributesPositive (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) = 
     // First line calculates pk, second line pk + nk
-    let examplesWithValue = List.filter (fun (x : string list) -> x.[mockIndex.[attribute]] = value) examples in
+    let examplesWithValue = List.filter (fun (x : string list) -> x.[index.[attribute]] = value) examples in
     let positiveValues = List.filter (fun (x : string list) -> x.Head = mockClass.Head) examplesWithValue in
     // If statement to avoid division by 0 errors if there are no examples for a given value
     if examplesWithValue.Length = 0 then 0.0 else (float) positiveValues.Length / (float) examplesWithValue.Length
@@ -80,27 +83,27 @@ let entropy (num : float) =
 //@attribute: The attribute to calculate the remainder for
 //@attributes: List of attributes
 //@examples: Rows in the data
-let remainder (attribute : string) (attributes : Map<string,string list>) (examples : string list list) =
+let remainder (attribute : string) (attributes : Map<string,string list>) (examples : string list list) (index : Map<string,int>) =
     let values = attributes.[attribute] in
     // This whole list shenanigans does the sum of (pk + nk / p + n) * entropy(pk / pk + nk)
     List.map (fun (value : string) ->
-        (percentValue attribute value examples) * (entropy (percentAttributesPositive attribute value examples))) values |>
+        (percentValue attribute value examples index) * (entropy (percentAttributesPositive attribute value examples index))) values |>
         List.sum
 
 //Calculates the information gain of choosing a particular attribute
 //@attribute: The attribute to calculate information gain for
 //@attributes: List of attributes
 //@examples: Rows in the data
-let infoGain (attribute : string) (attributes : Map<string,string list>) (examples : string list list) =
-    (entropy (percentPositive examples)) - (remainder attribute attributes examples)
+let infoGain (attribute : string) (attributes : Map<string,string list>) (examples : string list list) (index : Map<string,int>) =
+    (entropy (percentPositive examples)) - (remainder attribute attributes examples index)
 
 //Selects the attribute with the highest information gain
 //@attributes: List of attributes
 //@examples: Rows in the data
-let mostImportant (attributes : Map<string,string list>) (examples : string list list) : string =
+let mostImportant (attributes : Map<string,string list>) (examples : string list list) (index : Map<string,int>): string =
    // Get attributes in list form, calculate their gains, zip them together, sort, and pick the best one
    let attributeList = Map.toList attributes |> List.map (fun x -> fst x) in
-   let gains = List.map (fun (attribute : string) -> infoGain attribute attributes examples) attributeList in
+   let gains = List.map (fun (attribute : string) -> infoGain attribute attributes examples index) attributeList in
    let zipped = List.zip attributeList gains |> List.sortBy (fun (_, y) -> -y) in
    fst zipped.Head
  
@@ -108,27 +111,27 @@ let mostImportant (attributes : Map<string,string list>) (examples : string list
 //@examples: Rows of data
 //@attributes: List of attributes (backwards from rest of functions but I'm scared to change until committed)
 //@parentexamples: The examples from the parent tree
-let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) : DecisionTree = 
-    let attribute = mostImportant attributes examples in // The attribute we're selecting to split on
+let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) (index : Map<string,int>) : DecisionTree = 
+    let attribute = mostImportant attributes examples index in // The attribute we're selecting to split on
     let values = attributes.[attribute] in // List of values for the attribute
     // Creates a list, that has one list for each value, which is a list of rows (themselves lists) that contain the given value
     let exs = List.map (fun value -> List.filter (fun (row : string list) ->
-        row.[mockIndex.[attribute]] = value) examples) values in
+        row.[index.[attribute]] = value) examples) values in
     // A new attribute map, without the attribute we're splitting on
     let fewerAttributes = Map.remove attribute attributes in
     // Create a list of subtrees (by calling dtl) with the values created above
-    let subtrees = List.map (fun newexs -> dtl newexs fewerAttributes examples) exs in
+    let subtrees = List.map (fun newexs -> dtl newexs fewerAttributes examples index) exs in
     // Match the values with their subtree in a list of tuples
     let zipped = List.zip values subtrees in
     // Convert the list of tuples into a map, and make create the InnerNode for the split
     InnerNode(attribute,Map.ofList(zipped))
 
-and dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) =
+and dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
-    if examples.IsEmpty then LeafNode (plurality parentExamples)
-    elif sameClassification examples then LeafNode (examples.Head.Head)
-    elif Map.isEmpty attributes then LeafNode (plurality parentExamples)
-    else createSubtree examples attributes
+    if examples.IsEmpty then LeafNode (plurality parentExamples index)
+    elif sameClassification examples index then LeafNode (examples.Head.Head)
+    elif Map.isEmpty attributes then LeafNode (plurality parentExamples index)
+    else createSubtree examples attributes index
 
 // Stolen from Mitziu's code because I've been going at this for hours and don't want to deal with imports and git right now
 
