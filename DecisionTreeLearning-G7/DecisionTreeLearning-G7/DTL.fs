@@ -1,5 +1,6 @@
 ﻿open System
 open MathNet.Numerics
+open Microsoft.FSharp.Math
 
 let mockAttributes = Map.empty.
                         Add("outlook",["sunny";"overcast";"rainy"]).
@@ -183,3 +184,29 @@ let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<
     let result = List.map2 (fun a b -> a = b) testDataResults groundTruth
     let accuracy = float (result |> List.sumBy (fun x -> if x = true then 1 else 0)) / float (List.length result)
     accuracy
+
+
+type Option<'a> = 
+    | Some of 'a
+    | None
+
+let rec toMap (node:DecisionTree): (Map<string,Option<'_a>>)=
+    match node with
+    //| LeafNode decision -> [("a", LeafNode decision)]
+    //| LeafNode decision -> Map.empty.Add("Yes", null);
+    | LeafNode s-> Map.empty.Add(s, None)
+    | InnerNode (attribute, attributeMap) -> 
+        let children = attributeMap |> Map.toList
+        let children = children |> List.map (fun (k,v) -> (k, (toMap (v)))) |> Map.ofList
+        Map.empty.Add(attribute, Some children)
+
+
+let Yes = LeafNode("yes")
+let No = LeafNode("no")
+
+let Humidity = InnerNode("humidity", Map.empty.Add("high", No).Add("normal", Yes))
+
+let Wind = InnerNode("wind", Map.empty.Add("true", No).Add("false", Yes))
+
+let Outlook = InnerNode("outlook", Map.empty.Add("sunny", Humidity).Add("overcast", Yes).Add("rainy", Wind))
+let root = Outlook;
