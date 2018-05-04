@@ -9,7 +9,7 @@
 		"6": "bottom-left-square",
 		"7": "bottom-middle-square",
 		"8": "bottom-right-square",
-		"class": ["positive", "negative"]
+		"9": ["positive", "negative"]
 	}, 
 	"domain": {
 		"0": ["x", "o", "b"],

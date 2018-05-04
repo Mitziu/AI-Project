@@ -1,19 +1,32 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
-open FSharp.Data
 open FSharp.Data.CsvExtensions
-(*
-type DataModel = JsonProvider<"C:\\Users\\dichha\\Documents\\Graduate\\Spring2018\\AI\\final-project\\AI-Project\\DecisionTreeLearning-G7\\DecisionTreeLearning-G7\\data\\tic-tac-toe.json">
-let doc = DataModel.GetSample()
-printfn "Testing"
-printfn "%s" (doc.Attributes.``0``)
-*)
-let data = CsvFile.Load("C:\\Users\\dichha\\Documents\\Graduate\\Spring2018\\AI\\final-project\\AI-Project\\DecisionTreeLearning-G7\\DecisionTreeLearning-G7\\data\\tic-tac-toe.csv");
+open System.IO
+open System.Reflection
+open FSharp.Data
+open System.ComponentModel
+open System.Runtime.Serialization.Formatters
 
 
-for row in data.Rows do 
-   printfn "(%s)" (row.GetColumn "0")
+let jsonFile = "Data\\tic-tac-toe.json"
+type JsonData = JsonProvider<Sample=const(__SOURCE_DIRECTORY__ + "\\Data\\tic-tac-toe.json")>
+let doc = JsonData.GetSample()
+printfn "%s" doc.Attributes.``0`` // attribute name by value
+let list = doc.Domain.``0``
+printfn "%A" list // attribute index 0's domain
+
+
+
+let baseDirectory = __SOURCE_DIRECTORY__
+let filePath = "Data\\tic-tac-toe.txt"
+let fullPath = Path.Combine(baseDirectory, filePath)
+
+// method for converting sequece to list
+
+let readLines filePath = Seq.toList (System.IO.File.ReadLines(filePath))
+let result' = readLines fullPath 
+let result = result' |> List.map (fun l -> l.Split ',' |> Array.toList) 
 
 
 [<EntryPoint>]
