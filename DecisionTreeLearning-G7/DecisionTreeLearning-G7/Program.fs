@@ -1,12 +1,9 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
-open FSharp.Data.CsvExtensions
 open System.IO
-open System.Reflection
 open FSharp.Data
-open System.ComponentModel
-open System.Runtime.Serialization.Formatters
+
 
 
 let jsonFile = "Data\\tic-tac-toe.json"
