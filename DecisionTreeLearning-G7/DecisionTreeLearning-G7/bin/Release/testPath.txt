@@ -1,0 +1,10 @@
+{
+  "InnerNode": [
+    "test",
+    {
+      "testValue": {
+        "LeafNode": "a"
+      }
+    }
+  ]
+}

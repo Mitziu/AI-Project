@@ -1,6 +1,9 @@
 ﻿open System
+open System.IO
 open MathNet.Numerics
 open Microsoft.FSharp.Math
+open FSharp.Json
+
 
 let mockAttributes = Map.empty.
                         Add("outlook",["sunny";"overcast";"rainy"]).
@@ -185,28 +188,38 @@ let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<
     let accuracy = float (result |> List.sumBy (fun x -> if x = true then 1 else 0)) / float (List.length result)
     accuracy
 
+//Dumps the Decision Tree object into JSON file
+//@filePath: File path of output JSON file
+//@root: Root of decision tree to be serialized
+let dumpToJson (root:DecisionTree) (filePath:string) : string =
+    let JSon_Content = Json.serialize root
+    File.WriteAllText(filePath, JSon_Content) |> ignore
+    JSon_Content
 
-type Option<'a> = 
-    | Some of 'a
-    | None
+//Builds Decision Tree from the file content
+//@filePath: File path to input JSON file
+let buildFromJson (filePath:string) : DecisionTree =
+    let json = File.ReadAllText(filePath)
+    Json.deserialize<DecisionTree> json
 
-let rec toMap (node:DecisionTree): (Map<string,Option<'_a>>)=
-    match node with
-    //| LeafNode decision -> [("a", LeafNode decision)]
-    //| LeafNode decision -> Map.empty.Add("Yes", null);
-    | LeafNode s-> Map.empty.Add(s, None)
-    | InnerNode (attribute, attributeMap) -> 
-        let children = attributeMap |> Map.toList
-        let children = children |> List.map (fun (k,v) -> (k, (toMap (v)))) |> Map.ofList
-        Map.empty.Add(attribute, Some children)
+    
+[<EntryPoint>]
+let main argv = 
+    //Example on how to run it
+    //I had to do it this way because of Nuget packets acting weird in interactive mode
+    printfn "%A" "This is a test!"
+    let examples = mockExamples
+    let mockTree = LeafNode("a")
+    let mockRoot = InnerNode("test", Map.empty.Add("testValue", mockTree))
+    printf "%s" (dumpToJson mockTree "testPath.txt")
+    printf "%s" (dumpToJson mockRoot "testPath.txt")
 
+    let jsonContent = dumpToJson mockRoot
 
-let Yes = LeafNode("yes")
-let No = LeafNode("no")
+    let rebuildTree = buildFromJson "testPath.txt"
+    match rebuildTree with
+        | InnerNode (s, m) -> printfn "Inner Node %s" s
+        | LeafNode s -> printfn "Leaf Node %s" s
 
-let Humidity = InnerNode("humidity", Map.empty.Add("high", No).Add("normal", Yes))
-
-let Wind = InnerNode("wind", Map.empty.Add("true", No).Add("false", Yes))
-
-let Outlook = InnerNode("outlook", Map.empty.Add("sunny", Humidity).Add("overcast", Yes).Add("rainy", Wind))
-let root = Outlook;
+    let x = System.Console.ReadLine()
+    0 // return an integer exit code
