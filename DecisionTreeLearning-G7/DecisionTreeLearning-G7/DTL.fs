@@ -1,6 +1,7 @@
 ﻿open System
 open System.IO
 open MathNet.Numerics
+open MathNet.Numerics.Random
 open Microsoft.FSharp.Math
 open FSharp.Json
 
@@ -179,7 +180,7 @@ let classifyAllRows (data:string list list) (root:DecisionTree) (indexMap: Map<s
 //@root: Root of Decision Tree
 //@indexMap: Map that maps attribute names to Index
 //@groundTruth: List of strings that will be used to check accuracy
-let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<string, int>) = 
+let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<string, int>) : float = 
     let testDataResults = classifyAllRows testData root indexMap
     let groundTruth = testData |> List.map (fun row -> row.[indexMap.["class"]])
     printfn "%A" testDataResults
@@ -202,12 +203,72 @@ let buildFromJson (filePath:string) : DecisionTree =
     let json = File.ReadAllText(filePath)
     Json.deserialize<DecisionTree> json
 
-    
+
+//Create K_Folds
+//@data: Entire data read from CSV file
+//@k: How many folds there will be
+let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) = 
+    //Shuffles the data
+    //@data: Entire data read from CSV file
+    let shuffle (data: 'a list) : ('a list) = 
+        let swap_items (a: int) (b: int) (r:'a array) : unit =
+            let temp = r.[a]
+            r.[a] <- r.[b]
+            r.[b] <- temp
+        let rng = System.Random()
+        let data' = Array.ofList data
+        Array.iteri (fun i x -> swap_items i (rng.Next (Array.length data'))  data') data'
+        data' |> List.ofArray
+
+    //Splits into k different sublists
+    //@data: Entire data read from CSV file
+    //@k: How many folds there will be.
+    let split_into_k (data: 'a list) (k: int) : ('a list list) = 
+        let k = List.length data / k
+        let cuts = [0 .. k .. ((List.length data) - k)]
+        cuts |> List.map (fun x -> data.[x .. x + (k - 1)])
+
+
+
+    let create_all_possible_sets (folds: 'a list list) (k: int) = 
+        //Splits into train and test set
+        //@folds: List of folds
+        //@index: Which index should be used for test
+        let create_train_test (folds: 'a list list) (index: int) =
+            //Removes at specific index
+            //@folds: List of folds
+            //@index: Which index needs to removed
+            let rec removeAtIndex (folds: 'a list list) (index:int) = 
+                match folds with
+                | h::t when index = 0 -> t
+                | h::t -> h :: removeAtIndex t (index - 1)
+                | _ -> []
+            //Creates (train,test) set
+            (removeAtIndex folds index, folds.[index])
+
+        List.map (fun i -> create_train_test folds i) [0 .. k - 1]
+        
+
+    let shuffled_data = shuffle data
+    let folds = split_into_k shuffled_data k
+    create_all_possible_sets folds k
+
+//Will Do K-Fold Validation on data set, returns average accuracy
+//@data: data read from CSV file
+//@k: How many folds
+//@attributes: Attributes map read from JSON
+//@indexMap: Index map read from JSON
+let k_fold_validation (data: 'a list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) : (float) = 
+    let train_test_sets = create_k_folds data k
+    let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
+    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap) indexMap)
+    List.average results
+
+
 [<EntryPoint>]
 let main argv = 
     //Example on how to run it
-    //I had to do it this way because of Nuget packets acting weird in interactive mode
-    printfn "%A" "This is a test!"
+    (*printfn "%A" "This is a test!"
     let examples = mockExamples
     let mockTree = LeafNode("a")
     let mockRoot = InnerNode("test", Map.empty.Add("testValue", mockTree))
@@ -220,6 +281,8 @@ let main argv =
     match rebuildTree with
         | InnerNode (s, m) -> printfn "Inner Node %s" s
         | LeafNode s -> printfn "Leaf Node %s" s
+    *)
+
 
     let x = System.Console.ReadLine()
     0 // return an integer exit code
