@@ -2,9 +2,14 @@
 #else
 module DTL
 #endif
-open System
+open System 
+open System.IO
 open FSharp.Json
+open MathNet.Numerics
 open MathNet.Numerics.Distributions
+open MathNet.Numerics.Random
+open Microsoft.FSharp.Math
+
 
 let mockAttributes = Map.empty.
                         Add("outlook",["sunny";"overcast";"rainy"]).
@@ -139,14 +144,14 @@ let rec createSubtree (examples : string list list) (attributes : Map<string, st
     // A new attribute map, without the attribute we're splitting on
     let fewerAttributes = Map.remove attribute attributes in
     // Create a list of subtrees (by calling dtl) with the values created above
-    let subtrees = List.map (fun newexs -> dtl newexs fewerAttributes examples index) exs in
+    let subtrees = List.map (fun newexs -> dtlHelper newexs fewerAttributes examples index) exs in
     // Match the values with their subtree in a list of tuples
     let zipped = List.zip values subtrees in
     // Convert the list of tuples into a map, and make create the InnerNode for the split
     InnerNode(attribute,Map.ofList(zipped),examples)
 
 // HOW TO CALL : dtl examples attributes [] indexMap
-and dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
+and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
     let classes = getClassValues examples index in
     if examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
@@ -358,41 +363,17 @@ let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (inde
         let recurse = List.map (fun (x,y) -> (x,prune y attributes index classes)) allNodes in
         let newSubtrees = Map.ofList recurse in
         InnerNode(attribute, newSubtrees, examples)
-        
 
-
-// Just ignore this, this was one (failed) attempt at doing the pruning
-let rec fullPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) =
-    match tree with
-    | LeafNode (classification, examples) -> LeafNode (classification, examples)
-    | InnerNode(attribute, attributeMap, examples) -> 
-        let treeList = Map.toList attributeMap in // [(attr,tree)...]
-        let possiblePrunes = List.filter (fun (attr,child) -> parentOfLeaves child) treeList in  // only those eligible to be pruned
-        let toPrune = List.map (fun (attr,child) -> (attr, chiTest child attributes index classes)) possiblePrunes in
-        let toLeaf = List.map (fun (attr,child) -> (attr, leafify child index)) toPrune in
-        let newAttributes = listToMap toLeaf attributeMap in 
-        // Need to actually recurse down in here 
-        InnerNode(attribute, newAttributes, examples)
-
-//My original attempt: given a tree, returns all nodes that should be pruned from it
-//Problem: I can't actually figure out how to remove the nodes...
-//@tree: Tree to prune
+//DTL wrapper that allows a true/false variable to account for pruning
+//@examples: Examples for decision tree
 //@attributes: Attribute map
+//@parentExamples: initialize as [], provides parentExample storage for algorithm
 //@index: Index map
-//@classes: Possible class values
-let nodesToPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) = //: DecisionTree list =
-    let possiblePrunes = pruneCandidates tree in
-    let chiValues = List.map (fun (candidate : DecisionTree) ->
-        match candidate with
-        | LeafNode _ -> 0.0
-        | InnerNode (attribute, _, examples) -> 
-            let deltaValue = delta attribute attributes examples index classes in
-            let df = (float) attributes.[attribute].Length - 1.0 in
-            ChiSquared.CDF(df,deltaValue)) possiblePrunes in
-            List.zip possiblePrunes chiValues |>
-            List.filter (fun (_,y) -> y < 0.95) |>
-            List.map (fun (x,_) -> x) 
-    
+//@pruning: Prune tree if true
+let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (pruning : bool) =
+    let tree = dtlHelper examples attributes parentExamples index in
+    let classes = getClassValues examples index in
+    if pruning then (prune tree attributes index classes) else tree
 
 // Stolen from Mitziu's code because I've been going at this for hours and don't want to deal with imports and git right now
 
@@ -434,8 +415,107 @@ let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<
     let accuracy = float (result |> List.sumBy (fun x -> if x = true then 1 else 0)) / float (List.length result)
     accuracy
 
-let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex
+//Dumps the Decision Tree object into JSON file
+//@filePath: File path of output JSON file
+//@root: Root of decision tree to be serialized
+let dumpToJson (root:DecisionTree) (filePath:string) : string =
+    let JSon_Content = Json.serialize root
+    File.WriteAllText(filePath, JSon_Content) |> ignore
+    JSon_Content
+
+//Builds Decision Tree from the file content
+//@filePath: File path to input JSON file
+let buildFromJson (filePath:string) : DecisionTree =
+    let json = File.ReadAllText(filePath)
+    Json.deserialize<DecisionTree> json
+
+
+//Create K_Folds
+//@data: Entire data read from CSV file
+//@k: How many folds there will be
+let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) = 
+    //Shuffles the data
+    //@data: Entire data read from CSV file
+    let shuffle (data: 'a list) : ('a list) = 
+        let swap_items (a: int) (b: int) (r:'a array) : unit =
+            let temp = r.[a]
+            r.[a] <- r.[b]
+            r.[b] <- temp
+        let rng = System.Random()
+        let data' = Array.ofList data
+        Array.iteri (fun i x -> swap_items i (rng.Next (Array.length data'))  data') data'
+        data' |> List.ofArray
+
+    //Splits into k different sublists
+    //@data: Entire data read from CSV file
+    //@k: How many folds there will be.
+    let split_into_k (data: 'a list) (k: int) : ('a list list) = 
+        let k = List.length data / k
+        let cuts = [0 .. k .. ((List.length data) - k)]
+        cuts |> List.map (fun x -> data.[x .. x + (k - 1)])
+
+
+
+    let create_all_possible_sets (folds: 'a list list) (k: int) = 
+        //Splits into train and test set
+        //@folds: List of folds
+        //@index: Which index should be used for test
+        let create_train_test (folds: 'a list list) (index: int) =
+            //Removes at specific index
+            //@folds: List of folds
+            //@index: Which index needs to removed
+            let rec removeAtIndex (folds: 'a list list) (index:int) = 
+                match folds with
+                | h::t when index = 0 -> t
+                | h::t -> h :: removeAtIndex t (index - 1)
+                | _ -> []
+            //Creates (train,test) set
+            (removeAtIndex folds index, folds.[index])
+
+        List.map (fun i -> create_train_test folds i) [0 .. k - 1]
+        
+
+    let shuffled_data = shuffle data
+    let folds = split_into_k shuffled_data k
+    create_all_possible_sets folds k
+
+//Will Do K-Fold Validation on data set, returns average accuracy
+//@data: data read from CSV file
+//@k: How many folds
+//@attributes: Attributes map read from JSON
+//@indexMap: Index map read from JSON
+let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) : (float) = 
+    let train_test_sets = create_k_folds data k
+    let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
+    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap pruning) indexMap)
+    List.average results
+
+(* Commented out because already another main in Program.fs
+[<EntryPoint>]
+let main argv = 
+    //Example on how to run it
+    (*printfn "%A" "This is a test!"
+    let examples = mockExamples
+    let mockTree = LeafNode("a")
+    let mockRoot = InnerNode("test", Map.empty.Add("testValue", mockTree))
+    printf "%s" (dumpToJson mockTree "testPath.txt")
+    printf "%s" (dumpToJson mockRoot "testPath.txt")
+    let jsonContent = dumpToJson mockRoot
+    let rebuildTree = buildFromJson "testPath.txt"
+    match rebuildTree with
+        | InnerNode (s, m) -> printfn "Inner Node %s" s
+        | LeafNode s -> printfn "Leaf Node %s" s
+    *)
+
+    let x = System.Console.ReadLine()
+    0 // return an integer exit code
+*)
+
+
+// Testing examples
+(*
+let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex true
 
 let treeToJson = Json.serialize tennisTree
 let jsonToTree = Json.deserialize<DecisionTree> treeToJson
-
+*)
