@@ -49,18 +49,28 @@ let swap (array: 'a[]) (first: int) (second: int): 'a[] =
     array
 *)
 // 2. balance 
-(*
+
 let shift (array: 'a[]) = 
     let cat = array.[0]
     for i in 1..array.Length-1 do 
         array.[i-1] <- array.[i]
     array.[array.Length-1] <- cat
     array
+(*
 let filePath2 = "Data\\balance.txt"
 let fullPath2 = Path.Combine(baseDirectory, filePath2)
 let result2' = readLines fullPath2 
 let result2 = result2' |> List.map (fun a -> a.Split ','|> fun arr -> shift arr |> Array.toList)
 *)
+
+// 3. breast-cancer 
+(*
+let filePath3 = "Data\\breast-cancer.txt" 
+let fullPath3 = Path.Combine(baseDirectory, filePath3)
+let result3' = readLines fullPath3
+let result3 = result3' |> List.map (fun a -> a.Split ',' |> fun arr -> shift arr |> Array.toList)
+*)
+
 
 
 
