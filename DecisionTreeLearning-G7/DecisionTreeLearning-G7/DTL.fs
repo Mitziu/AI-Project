@@ -336,6 +336,31 @@ let rec listToMap (pairs : (string * DecisionTree) list) (attributeMap : Map<str
     | [] -> attributeMap
     | h :: t -> listToMap t (attributeMap.Add(h))
 
+//Just converts a node's subtree map into a list of tuples
+//@subtrees: The subtree map
+let getSubtrees (subtrees: Map<string,DecisionTree>) : (string * DecisionTree) list =
+    Map.toList subtrees
+
+//Does the actual pruning, given a full decision tree
+//@tree: The tree to prune
+//@attributes: Attribute map
+//@index: Index map
+//@classes: Possible class values
+let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
+    match tree with
+    | LeafNode (classification, examples) -> LeafNode (classification,examples)
+    | InnerNode (attribute, subtrees, examples) ->
+        let children = getSubtrees subtrees in
+        let maybePrune = List.filter (fun (_,y) -> parentOfLeaves y) children in
+        let otherNodes = (Set.ofList children) - (Set.ofList maybePrune) |> Set.toList in
+        let chiTested = List.map (fun (x,y) -> (x,chiTest y attributes index classes)) maybePrune in
+        let allNodes = List.append otherNodes chiTested in
+        let recurse = List.map (fun (x,y) -> (x,prune y attributes index classes)) allNodes in
+        let newSubtrees = Map.ofList recurse in
+        InnerNode(attribute, newSubtrees, examples)
+        
+
+
 // Just ignore this, this was one (failed) attempt at doing the pruning
 let rec fullPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) =
     match tree with
