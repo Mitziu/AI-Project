@@ -135,7 +135,7 @@ let mostImportant (attributes : Map<string,string list>) (examples : string list
 //@examples: Rows of data
 //@attributes: List of attributes (backwards from rest of functions but I'm scared to change until committed)
 //@parentexamples: The examples from the parent tree
-let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
+let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) (index : Map<string,int>) (classes : string list) (depth : int) : DecisionTree = 
     let attribute = mostImportant attributes examples index classes in // The attribute we're selecting to split on
     let values = attributes.[attribute] in // List of values for the attribute
     // Creates a list, that has one list for each value, which is a list of rows (themselves lists) that contain the given value
@@ -144,20 +144,21 @@ let rec createSubtree (examples : string list list) (attributes : Map<string, st
     // A new attribute map, without the attribute we're splitting on
     let fewerAttributes = Map.remove attribute attributes in
     // Create a list of subtrees (by calling dtl) with the values created above
-    let subtrees = List.map (fun newexs -> dtlHelper newexs fewerAttributes examples index) exs in
+    let subtrees = List.map (fun newexs -> dtlHelper newexs fewerAttributes examples index (depth-1)) exs in
     // Match the values with their subtree in a list of tuples
     let zipped = List.zip values subtrees in
     // Convert the list of tuples into a map, and make create the InnerNode for the split
     InnerNode(attribute,Map.ofList(zipped),examples)
 
 // HOW TO CALL : dtl examples attributes [] indexMap
-and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
+and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
     let classes = getClassValues examples index in
-    if examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
+    if depth = 0 then LeafNode ((plurality examples index),examples)
+    elif examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
     elif sameClassification examples index then LeafNode ((examples.Head.[index.["class"]]),examples)
     elif Map.isEmpty attributes then LeafNode ((plurality parentExamples index),examples)
-    else createSubtree examples attributes index classes
+    else createSubtree examples attributes index classes depth
 
 // Everything between here and the END comment is just finding values for
 // calculating the Chi-squared value. Everything after the end comment is 
@@ -370,8 +371,9 @@ let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (inde
 //@parentExamples: initialize as [], provides parentExample storage for algorithm
 //@index: Index map
 //@pruning: Prune tree if true
-let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (pruning : bool) =
-    let tree = dtlHelper examples attributes parentExamples index in
+//@depth: How deep the tree is allowed to go, -1 for no limit
+let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) (pruning : bool) =
+    let tree = dtlHelper examples attributes parentExamples index depth in
     let classes = getClassValues examples index in
     if pruning then (prune tree attributes index classes) else tree
 
@@ -487,7 +489,7 @@ let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) =
 let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) : (float) = 
     let train_test_sets = create_k_folds data k
     let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
-    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap pruning) indexMap)
+    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap -1 pruning) indexMap)
     List.average results
 
 (* Commented out because already another main in Program.fs
