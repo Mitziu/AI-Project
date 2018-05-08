@@ -154,65 +154,131 @@ and dtl (examples : string list list) (attributes : Map<string,string list>) (pa
     elif Map.isEmpty attributes then LeafNode ((plurality parentExamples index),examples)
     else createSubtree examples attributes index classes
 
-// p
+// Everything between here and the END comment is just finding values for
+// calculating the Chi-squared value. Everything after the end comment is 
+// me trying to figure out the best way to actually do the pruning
+// ****************** START Chi-squared calculations **************************
+
+//Counts the number of positives in an example set (p)
+//@examples: The example set given
+//@index: The index mappings
+//@classes: The possible class values
 let positiveCount (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let positives = List.filter (fun (x : string list) -> x.[index.["class"]] = classes.Head) examples in
     positives.Length
 
-// n
+//Counts the number of negatives in an example set (n)
+//@examples: The example set given
+//@index: The index mappings
+//@classes: The possible class values
+// p
 let negativeCount (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let lengthPositive = positiveCount examples index classes in
     examples.Length - lengthPositive
 
-// pk-hat (p * (pk + nk / p + n))
+//Calculates the expected positives : pk-hat (p * (pk + nk / p + n))
+//@attribute: The attribute that has been split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let expectedPositives (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let positives = positiveCount examples index classes in
     let percentAttribute = percentValue attribute value examples index in
     (float) positives * percentAttribute
 
-// pn-hat (n * (pk + nk / p + n))
+//Calculates the expected negatives : nk-hat (n * (pk + nk / p + n))
+//@attribute: The attribute that has been split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let expectedNegatives (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let negatives = negativeCount examples index classes in
     let percentAttribute = percentValue attribute value examples index in
     (float) negatives * percentAttribute
 
-// pk -- Given a value, how many are positive?
+// Actual positive count for a value (pk)
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let positivesOfValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let examplesWithValue = List.filter (fun (x : string list) -> x.[index.[attribute]] = value) examples in
     let positives = List.filter (fun (x : string list) -> x.[index.["class"]] = classes.Head) examplesWithValue
     (float) positives.Length
 
-// nk -- Given a value, how many are negative?
+//Actual negative count for a value (nk)
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let negativesOfValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let examplesWithValue = List.filter (fun (x : string list) -> x.[index.[attribute]] = value) examples in
     (float) examplesWithValue.Length - positivesOfValue attribute value examples index classes
-    //let positiveValues = List.filter (fun (x : string list) -> x.[index.["class"]] = classes.Head) examplesWithValue
 
+//For deviation calculation: (pk - pk-hat)^2 / pk-hat
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let positiveChiValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let actualPositives = positivesOfValue attribute value examples index classes in
     let expectPositives = expectedPositives attribute value examples index classes in
     ((actualPositives - expectPositives) ** 2.0) / expectPositives
 
+//For deviation calculation: (nk - nk-hat)^2 / nk-hat
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let negativeChiValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let actualNegatives = negativesOfValue attribute value examples index classes in
     let expectNegatives = expectedNegatives attribute value examples index classes in
     ((actualNegatives - expectNegatives) ** 2.0) / expectNegatives
 
+//Sum of the positive and negative values above
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let deviationValue (attribute : string) (value : string) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let posValue = positiveChiValue attribute value examples index classes in
     let negValue = negativeChiValue attribute value examples index classes in
     posValue + negValue
 
+//The delta value -- sum of all deviation values
+//@attribute: The attribute split on
+//@value: The value this split was given
+//@examples: Example set given
+//@index: Index map
+//@classes: Possible class values
 let delta (attribute : string) (attributes : Map<string,string list>) (examples : string list list) (index : Map<string,int>) (classes : string list) =
     let values = attributes.[attribute] in
     List.map (fun value -> deviationValue attribute value examples index classes) values |>
     List.sum
 
+//******************** END Chi-squared calculations ***************************
+
+// From here on, this is just my attempts (and functions needed) to try
+// to figure out how to actually prune the tree. It's a huge mess, don't
+// waste too much time looking into these
+
+//Determines if a given node is a leaf node, true if yes
+//@tree: The node to test
 let isLeaf (tree : DecisionTree) =
     match tree with
     | LeafNode _ -> true
     | _ -> false
 
+//Determines if a node has only leaf descendents, returns true if yes
+//We need to try pruning all nodes where this is the case
+//@tree: The node to test
 let parentOfLeaves (tree : DecisionTree) =
     match tree with
     | LeafNode _ -> false
@@ -220,25 +286,76 @@ let parentOfLeaves (tree : DecisionTree) =
     let nodes = Map.toList attributeMap |> List.map (fun (_,y) -> y) in
     if List.forall isLeaf nodes then true else false
 
-// Convert map to list, get the trees only, append the tree to the recursed list, concat them all together
-// Note to self: This function took like 3 hours to figure out, please don't break it, just make a new function
-let rec allTrees (tree : DecisionTree) : DecisionTree list =
-    match tree with
-    | LeafNode _ -> []
-    | InnerNode(_, attributeMap, _) ->
-        Map.toList attributeMap |> List.map (fun (_,y) -> y) |>
-        List.map (fun child -> child :: allTrees child) |> List.concat
+//Converts the tree into a list of all trees (and subtrees)
+//Convert map to list, get the trees only, append the tree to the recursed list, concat them all together
+//Note to self: This function took like 3 hours to figure out, please don't break it, just make a new function
+//@tree The tree to traverse
+let allTrees (tree : DecisionTree) : DecisionTree list = 
+    let rec helper (tree : DecisionTree) : DecisionTree list =
+        match tree with
+        | LeafNode _ -> []
+        | InnerNode(_, attributeMap, _) ->
+            Map.toList attributeMap |> List.map (fun (_,y) -> y) |>
+            List.map (fun child -> child :: helper child) |> List.concat
+    tree :: helper tree
 
-let pruneCandidates (tree : DecisionTree) : DecisionTree list =
-    let trees = allTrees tree in
-    List.filter parentOfLeaves trees
-
+//Turn a node that needs to be pruned into a leaf node with plurality deciding the class
+//@tree: Node to turn into a leaf
+//@index: Index mapping
 let leafify (tree : DecisionTree) (index : Map<string,int>) : DecisionTree = 
     match tree with
     | LeafNode (classification, examples) -> LeafNode (classification, examples)
     | InnerNode (_, _, examples) -> LeafNode(plurality examples index, examples)
 
-let nodesToPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) (previousTrees : DecisionTree list) : DecisionTree list =
+//Returns a list of all nodes that are parents of only leafs (the nodes we need to check)
+//@tree: The tree we want to check
+let pruneCandidates (tree : DecisionTree) : DecisionTree list =
+    let trees = allTrees tree in
+    List.filter parentOfLeaves trees
+
+//Performs a chi-squared test on an individual node, turns it into a leaf if
+//not significant, otherwise just return the tree
+//@tree: The node to test
+//@attributes: Attribute map
+//@index: Index map
+//@classes: Possible class values
+let chiTest (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list)  = 
+        match tree with
+        | LeafNode (a,b) -> LeafNode (a,b)
+        | InnerNode (attribute, _, examples) -> 
+            let deltaValue = delta attribute attributes examples index classes in
+            let df = (float) attributes.[attribute].Length - 1.0 in
+            let chi = ChiSquared.CDF(df,deltaValue) in
+            if chi < 0.95 then leafify tree index else tree
+
+//Turn a tuple list to a map. I'm pretty sure this is already a thing, so probably use that instead
+//@pairs: List of tuples to turn into a map
+//@attributeMap: The map to add the key value pairs into
+let rec listToMap (pairs : (string * DecisionTree) list) (attributeMap : Map<string,DecisionTree>) =
+    match pairs with
+    | [] -> attributeMap
+    | h :: t -> listToMap t (attributeMap.Add(h))
+
+// Just ignore this, this was one (failed) attempt at doing the pruning
+let rec fullPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) =
+    match tree with
+    | LeafNode (classification, examples) -> LeafNode (classification, examples)
+    | InnerNode(attribute, attributeMap, examples) -> 
+        let treeList = Map.toList attributeMap in // [(attr,tree)...]
+        let possiblePrunes = List.filter (fun (attr,child) -> parentOfLeaves child) treeList in  // only those eligible to be pruned
+        let toPrune = List.map (fun (attr,child) -> (attr, chiTest child attributes index classes)) possiblePrunes in
+        let toLeaf = List.map (fun (attr,child) -> (attr, leafify child index)) toPrune in
+        let newAttributes = listToMap toLeaf attributeMap in 
+        // Need to actually recurse down in here 
+        InnerNode(attribute, newAttributes, examples)
+
+//My original attempt: given a tree, returns all nodes that should be pruned from it
+//Problem: I can't actually figure out how to remove the nodes...
+//@tree: Tree to prune
+//@attributes: Attribute map
+//@index: Index map
+//@classes: Possible class values
+let nodesToPrune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) = //: DecisionTree list =
     let possiblePrunes = pruneCandidates tree in
     let chiValues = List.map (fun (candidate : DecisionTree) ->
         match candidate with
@@ -249,11 +366,8 @@ let nodesToPrune (tree : DecisionTree) (attributes : Map<string,string list>) (i
             ChiSquared.CDF(df,deltaValue)) possiblePrunes in
             List.zip possiblePrunes chiValues |>
             List.filter (fun (_,y) -> y < 0.95) |>
-            List.map (fun (x,_) -> x)
+            List.map (fun (x,_) -> x) 
     
-// WHAT TO DO WHEN YOU WORK ON THIS AGAIN: Use a style of function similar to allTrees, if the child node is
-// exactly identical to one of the nodes in a list made form nodesToPrune, then leafify that node
-
 
 // Stolen from Mitziu's code because I've been going at this for hours and don't want to deal with imports and git right now
 
