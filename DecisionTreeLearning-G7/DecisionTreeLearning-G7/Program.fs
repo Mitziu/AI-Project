@@ -27,15 +27,13 @@ let jsPath3 = baseDirectory + jsonFile3
 let jsPath4 = baseDirectory + jsonFile4
 
 
-type JsonData = JsonProvider<jsPath4>
+type JsonData = JsonProvider<jsPath2>
 let doc = JsonData.GetSample()
 
 // for splitting attributes
 let splitAttr (text: string) = 
     let mutable cleanText = text
-    cleanText <- cleanText.Replace("(", "")
-    cleanText <- cleanText.Replace(")", "")
-    cleanText <- cleanText.Replace("\"", "")
+    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "")
     let word = cleanText.Split ','
     word
 
@@ -43,14 +41,7 @@ let splitAttr (text: string) =
  //printfn "Testing for splitting"
 let splitDomain (text: string) = 
     let mutable cleanText = text
-    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "").Replace("\"", "").Replace("]", "").Replace("\r\n", "")
-    (*
-    cleanText <- cleanText.Replace(")", "")
-    cleanText <- cleanText.Replace("\"", "")
-    cleanText <- cleanText.Replace("\"", "")
-    cleanText <- cleanText.Replace("]", "")
-    cleanText <- cleanText.Replace("\r\n", "")
-	*)
+    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "").Replace("]", "").Replace("\r\n", "")
     let word = cleanText.Split '['
     //printfn "%A" word
     word
@@ -82,25 +73,23 @@ for domain in domains do
     domainList.Add(domain.ToString())
 
 let mutable domMap = Map.empty
-printfn "testing"
+//printfn "testing"
 
 
 
 for item in domainList do 
     //printfn "%s" item
     let result = splitDomain item
-    //printfn "%s" result.[1]
-    //printfn "%s" ((result.[0].Replace(",", "").Trim()))
+    //printfn "%s" result.[0]
     let key = result.[0].Replace(",", "").Trim() |> int
-    //printfn "%s" (result.[2])
     //printfn "%s" (tempMap.Item(key))
+    //printfn "%s" (result.[1])
     //let value = result.[1].Replace("]", "").Trim().Split ',' |> Array.toList
     let value = result.[1].Split ',' |> Array.toList |> List.map (fun x -> x.Trim())
-    printfn "%A" value
-    //domMap <- domMap.Add("key", ["1";"2"])
+    //printfn "%A" value
     domMap <- domMap.Add(tempMap.Item(key), value)
 
-    //domMap.
+
 // method for converting sequece to list
 let readLines filePath = Seq.toList (System.IO.File.ReadLines(filePath))
 
