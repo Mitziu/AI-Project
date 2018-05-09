@@ -94,7 +94,7 @@ for item in domainList do
 
     domMap <- domMap.Add(tempMap.Item(key), value)
 
-
+// method for converting sequece to list
 let readLines filePath = Seq.toList (System.IO.File.ReadLines(filePath))
 
 (*
@@ -111,7 +111,7 @@ let shift (array: 'a[]) =
 let filePath1 = "Data\\tic-tac-toe.txt"
 let fullPath1 = Path.Combine(baseDirectory, filePath1)
 
-// method for converting sequece to list
+
 let result1' = readLines fullPath1 
 let result1 = result1' |> List.map (fun l -> l.Split ',' |> Array.toList) 
 
