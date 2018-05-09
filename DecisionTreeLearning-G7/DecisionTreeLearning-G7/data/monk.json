@@ -1,6 +1,5 @@
 {
 	"attributes": {
-		
 		"0": "a1", 
 		"1": "a2", 
 		"2": "a3", 
@@ -18,7 +17,7 @@
 		"3": [1, 2, 3],
 		"4": [1, 2, 3, 4], 
 		"5": [1, 2], 
-		"6": "A unique symbol for each instance", 
+		"6": ["A unique symbol for each instance"], 
 		"7": [0, 1] 
 	}
 
