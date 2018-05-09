@@ -4,12 +4,6 @@
 open System.IO
 open FSharp.Data
 open FSharp.Data.JsonExtensions
-open System.Runtime.Serialization.Formatters
-open System.Runtime.Serialization.Formatters
-open System.Security.Cryptography
-open System.ComponentModel
-open FSharp.Json
-open System.Diagnostics
 open System.Collections.Generic
 
 [<Literal>]
@@ -46,14 +40,22 @@ let splitAttr (text: string) =
     word
 
 // for splitting domains
+ //printfn "Testing for splitting"
 let splitDomain (text: string) = 
     let mutable cleanText = text
-    cleanText <- cleanText.Replace("(", "")
+    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "").Replace("\"", "").Replace("]", "").Replace("\r\n", "")
+    (*
     cleanText <- cleanText.Replace(")", "")
     cleanText <- cleanText.Replace("\"", "")
     cleanText <- cleanText.Replace("\"", "")
+    cleanText <- cleanText.Replace("]", "")
+    cleanText <- cleanText.Replace("\r\n", "")
+	*)
     let word = cleanText.Split '['
+    //printfn "%A" word
     word
+let trim (text: string) = 
+    text.Trim()
 
 // FOR ATTRIBUTES PROCESSING
 let attrs = doc.Attributes.JsonValue.Properties
@@ -63,13 +65,13 @@ for attr in attrs do
    attrList.Add(attr.ToString())
 
 
-let mutable attrMap = Map.empty
+let mutable indexMap = Map.empty
 let mutable tempMap = Map.empty
 for item in attrList do 
     //printfn "testing"
     let result = splitAttr item //splitLine item
-    attrMap <- attrMap.Add((result.[1]).Trim(), (result.[0]).Trim())
-    tempMap <- tempMap.Add((result.[0]).Trim(), (result.[1]).Trim())
+    indexMap <- indexMap.Add((result.[1]).Trim(), (result.[0]).Trim() |> int)
+    tempMap <- tempMap.Add((result.[0]).Trim() |> int, (result.[1]).Trim())
 
 
 // FOR DOMAIN PROCESSING
@@ -82,18 +84,23 @@ for domain in domains do
 let mutable domMap = Map.empty
 printfn "testing"
 
+
+
 for item in domainList do 
+    //printfn "%s" item
     let result = splitDomain item
-    // printfn "%A" result
+    //printfn "%s" result.[1]
     //printfn "%s" ((result.[0].Replace(",", "").Trim()))
-    let key = result.[0].Replace(",", "").Trim()
+    let key = result.[0].Replace(",", "").Trim() |> int
     //printfn "%s" (result.[2])
     //printfn "%s" (tempMap.Item(key))
-    let value = result.[1].Replace("]", "").Trim().Split ',' |> List.ofArray
-   //printfn "%A" value
-
+    //let value = result.[1].Replace("]", "").Trim().Split ',' |> Array.toList
+    let value = result.[1].Split ',' |> Array.toList |> List.map (fun x -> x.Trim())
+    printfn "%A" value
+    //domMap <- domMap.Add("key", ["1";"2"])
     domMap <- domMap.Add(tempMap.Item(key), value)
 
+    //domMap.
 // method for converting sequece to list
 let readLines filePath = Seq.toList (System.IO.File.ReadLines(filePath))
 
