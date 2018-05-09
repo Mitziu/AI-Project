@@ -27,7 +27,7 @@ let jsPath3 = baseDirectory + jsonFile3
 let jsPath4 = baseDirectory + jsonFile4
 
 
-type JsonData = JsonProvider<jsPath2>
+type JsonData = JsonProvider<jsPath1>
 let doc = JsonData.GetSample()
 
 // for splitting attributes
@@ -84,7 +84,6 @@ for item in domainList do
     let key = result.[0].Replace(",", "").Trim() |> int
     //printfn "%s" (tempMap.Item(key))
     //printfn "%s" (result.[1])
-    //let value = result.[1].Replace("]", "").Trim().Split ',' |> Array.toList
     let value = result.[1].Split ',' |> Array.toList |> List.map (fun x -> x.Trim())
     //printfn "%A" value
     domMap <- domMap.Add(tempMap.Item(key), value)
