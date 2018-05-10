@@ -1,0 +1,5 @@
+map
+  [("adoption-of-the-budget-resulution", 2); ("aid-to-nicaraguan-contras", 7);
+   ("anti-satellite-test-ban", 6); ("class", 16); ("crime", 13);
+   ("duty-free-exports", 14); ("education-spending", 11); ("el-salvador-aid", 4);
+   ("export-administration-act-south-africa", 15); ...]

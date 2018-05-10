@@ -171,12 +171,19 @@ let main argv =
     let dataFile = argv.[1].Trim()
     let dataset = getSanitizedData dataFile 
     let domMap, indexMap = getMaps jsonFile
+    let attrMap = Map.remove "class" domMap 
 
-    printfn "%A" domMap
-    printfn "%A" indexMap
-    printfn "%A" dataset
-    printfn "%s" jsonFile
-    printfn "%s" dataFile
+    //printfn "%A" attrMap
+    //printfn "%A" indexMap
+    //printfn "%A" dataset
+    //printfn "%s" jsonFile
+    //printfn "%s" dataFile
+    
+    //let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 false 
+    //let bestModel = DTL.find_best_model dataset 4 attrMap indexMap
+    let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap false 6
+    //printfn "%O" dtlTest
+    printfn "%f %f" (fst accuracy) (snd accuracy)
     //printfn "%A" (domMap.Item("a1"))
     //printfn "%A" argv
     0 // return an integer exit code

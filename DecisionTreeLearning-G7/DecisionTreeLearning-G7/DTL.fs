@@ -24,7 +24,7 @@ let tennisAttributes = Map.empty.
                         Add("windy",["false";"true"])
 
 // My test of the classification
-let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\Documents\Stuff\School\Spring 2018\tennis.txt") |>
+let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\source\repos\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
                      Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 
 
@@ -135,7 +135,7 @@ let mostImportant (attributes : Map<string,string list>) (examples : string list
 //@examples: Rows of data
 //@attributes: List of attributes (backwards from rest of functions but I'm scared to change until committed)
 //@parentexamples: The examples from the parent tree
-let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
+let rec createSubtree (examples : string list list) (attributes : Map<string, string list>) (index : Map<string,int>) (classes : string list) (depth : int) : DecisionTree = 
     let attribute = mostImportant attributes examples index classes in // The attribute we're selecting to split on
     let values = attributes.[attribute] in // List of values for the attribute
     // Creates a list, that has one list for each value, which is a list of rows (themselves lists) that contain the given value
@@ -144,20 +144,21 @@ let rec createSubtree (examples : string list list) (attributes : Map<string, st
     // A new attribute map, without the attribute we're splitting on
     let fewerAttributes = Map.remove attribute attributes in
     // Create a list of subtrees (by calling dtl) with the values created above
-    let subtrees = List.map (fun newexs -> dtlHelper newexs fewerAttributes examples index) exs in
+    let subtrees = List.map (fun newexs -> dtlHelper newexs fewerAttributes examples index (depth-1)) exs in
     // Match the values with their subtree in a list of tuples
     let zipped = List.zip values subtrees in
     // Convert the list of tuples into a map, and make create the InnerNode for the split
     InnerNode(attribute,Map.ofList(zipped),examples)
 
 // HOW TO CALL : dtl examples attributes [] indexMap
-and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) =
+and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
     let classes = getClassValues examples index in
     if examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
+    elif depth = 0 then LeafNode ((plurality examples index),examples)
     elif sameClassification examples index then LeafNode ((examples.Head.[index.["class"]]),examples)
-    elif Map.isEmpty attributes then LeafNode ((plurality parentExamples index),examples)
-    else createSubtree examples attributes index classes
+    elif Map.isEmpty attributes then LeafNode ((plurality examples index),examples)
+    else createSubtree examples attributes index classes depth
 
 // Everything between here and the END comment is just finding values for
 // calculating the Chi-squared value. Everything after the end comment is 
@@ -351,7 +352,7 @@ let getSubtrees (subtrees: Map<string,DecisionTree>) : (string * DecisionTree) l
 //@attributes: Attribute map
 //@index: Index map
 //@classes: Possible class values
-let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
+let rec pruneHelper (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
     match tree with
     | LeafNode (classification, examples) -> LeafNode (classification,examples)
     | InnerNode (attribute, subtrees, examples) ->
@@ -360,9 +361,13 @@ let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (inde
         let otherNodes = (Set.ofList children) - (Set.ofList maybePrune) |> Set.toList in
         let chiTested = List.map (fun (x,y) -> (x,chiTest y attributes index classes)) maybePrune in
         let allNodes = List.append otherNodes chiTested in
-        let recurse = List.map (fun (x,y) -> (x,prune y attributes index classes)) allNodes in
+        let recurse = List.map (fun (x,y) -> (x,pruneHelper y attributes index classes)) allNodes in
         let newSubtrees = Map.ofList recurse in
         InnerNode(attribute, newSubtrees, examples)
+
+let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) =
+    let prunedTree = pruneHelper tree attributes index classes in
+    if tree = prunedTree then prunedTree else prune prunedTree attributes index classes
 
 //DTL wrapper that allows a true/false variable to account for pruning
 //@examples: Examples for decision tree
@@ -370,8 +375,9 @@ let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (inde
 //@parentExamples: initialize as [], provides parentExample storage for algorithm
 //@index: Index map
 //@pruning: Prune tree if true
-let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (pruning : bool) =
-    let tree = dtlHelper examples attributes parentExamples index in
+//@depth: How deep the tree is allowed to go, -1 for no limit
+let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) (pruning : bool) =
+    let tree = dtlHelper examples attributes parentExamples index depth in
     let classes = getClassValues examples index in
     if pruning then (prune tree attributes index classes) else tree
 
@@ -409,8 +415,6 @@ let classifyAllRows (data:string list list) (root:DecisionTree) (indexMap: Map<s
 let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<string, int>) = 
     let testDataResults = classifyAllRows testData root indexMap
     let groundTruth = testData |> List.map (fun row -> row.[indexMap.["class"]])
-    printfn "%A" testDataResults
-    printfn "%A" groundTruth
     let result = List.map2 (fun a b -> a = b) testDataResults groundTruth
     let accuracy = float (result |> List.sumBy (fun x -> if x = true then 1 else 0)) / float (List.length result)
     accuracy
@@ -484,11 +488,47 @@ let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) =
 //@k: How many folds
 //@attributes: Attributes map read from JSON
 //@indexMap: Index map read from JSON
-let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) : (float) = 
+//@pruning: Xi^2 pruning
+//@depth: Depth to be used for pruning
+let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) (depth: int) : (float * float) = 
     let train_test_sets = create_k_folds data k
     let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
-    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap pruning) indexMap)
-    List.average results
+    let validation_results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap depth pruning) indexMap)
+    let train_results = train_test_sets |> List.map(fun (train, test) -> testAccuracy train (dtl train attributes [] indexMap depth pruning) indexMap)
+
+    ((1.0 - List.average train_results), (1.0 - List.average validation_results))
+
+//Returns the model with the lowest validation error
+//@data: data read from CSV file
+//@k: How many folds
+//@attributes: Attributes map read from JSON
+//@indexMap: Index map read from JSON
+let find_best_model (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) =
+    let mutable depth = 1
+    let mutable test_results = []
+    let mutable converge = false
+    //Finds point where training error converges
+    //Stops while loop when train error reaches 0.0
+    while (converge = false) do
+        let scores = k_fold_validation data k attributes indexMap false depth
+        match scores with
+        | (train, test) when train = 0.0 -> 
+            test_results <- [test] |> List.append test_results
+            depth <- depth + 1
+            converge <- true
+        | (train, test) -> 
+            test_results <- [test] |> List.append test_results
+            depth <- depth + 1
+    
+    //Finds best depth and returns a model built with that parameter
+    let best_depth = test_results |> Seq.mapi (fun index value -> index, value) |> Seq.minBy snd
+    match best_depth with
+        | (index, value) -> dtl data attributes [] indexMap (index + 1) false
+
+    
+    //@depth: How deep the tree is allowed to go, -1 for no limit
+    //let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) (pruning : bool) =
+
 
 (* Commented out because already another main in Program.fs
 [<EntryPoint>]
@@ -514,7 +554,7 @@ let main argv =
 
 // Testing examples
 (*
-let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex true
+let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex -1 true
 
 let treeToJson = Json.serialize tennisTree
 let jsonToTree = Json.deserialize<DecisionTree> treeToJson
