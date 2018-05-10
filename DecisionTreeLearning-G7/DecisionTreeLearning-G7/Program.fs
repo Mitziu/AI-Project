@@ -3,7 +3,6 @@
 
 open System.IO
 open FSharp.Data
-open FSharp.Data.JsonExtensions
 open System.Collections.Generic
 
 [<Literal>]
