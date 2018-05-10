@@ -1,4 +1,4 @@
-﻿/ Learn more about F# at http://fsharp.org
+﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
 open System.IO
@@ -32,7 +32,7 @@ let jsPath4 = baseDirectory + jsonFile4
 let jsPath5 = baseDirectory + jsonFile5
 
 
-type JsonData = JsonProvider<jsPath5>
+//type JsonData = JsonProvider<jsPath5>
 // for splitting domains
 //printfn "Testing for splitting"
 let splitDomain (text: string) = 
