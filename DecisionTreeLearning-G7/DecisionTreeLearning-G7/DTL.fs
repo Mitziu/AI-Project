@@ -154,8 +154,8 @@ let rec createSubtree (examples : string list list) (attributes : Map<string, st
 and dtlHelper (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) =
     // This is boring, but handles the end cases where we run out of examples, attributes, or have a unanimous node.
     let classes = getClassValues examples index in
-    if depth = 0 then LeafNode ((plurality examples index),examples)
-    elif examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
+    if examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
+    elif depth = 0 then LeafNode ((plurality examples index),examples)
     elif sameClassification examples index then LeafNode ((examples.Head.[index.["class"]]),examples)
     elif Map.isEmpty attributes then LeafNode ((plurality examples index),examples)
     else createSubtree examples attributes index classes depth
@@ -542,7 +542,7 @@ let main argv =
 
 // Testing examples
 (*
-let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex true
+let tennisTree = dtl tennisExamples tennisAttributes [] tennisIndex -1 true
 
 let treeToJson = Json.serialize tennisTree
 let jsonToTree = Json.deserialize<DecisionTree> treeToJson
