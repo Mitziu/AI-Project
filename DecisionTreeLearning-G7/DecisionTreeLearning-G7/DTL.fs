@@ -157,7 +157,7 @@ and dtlHelper (examples : string list list) (attributes : Map<string,string list
     if depth = 0 then LeafNode ((plurality examples index),examples)
     elif examples.IsEmpty then LeafNode ((plurality parentExamples index),examples)
     elif sameClassification examples index then LeafNode ((examples.Head.[index.["class"]]),examples)
-    elif Map.isEmpty attributes then LeafNode ((plurality parentExamples index),examples)
+    elif Map.isEmpty attributes then LeafNode ((plurality examples index),examples)
     else createSubtree examples attributes index classes depth
 
 // Everything between here and the END comment is just finding values for
@@ -511,7 +511,7 @@ let find_best_model (data: string list list) (k: int) (attributes: Map<string, s
     
     let best_depth = test_results |> Seq.mapi (fun index value -> index, value) |> Seq.minBy snd
     match best_depth with
-        | (index, value) -> dtl data attributes [] indexMap false (index + 1)
+        | (index, value) -> dtl data attributes [] indexMap (index + 1) false
 
     
     //@depth: How deep the tree is allowed to go, -1 for no limit
