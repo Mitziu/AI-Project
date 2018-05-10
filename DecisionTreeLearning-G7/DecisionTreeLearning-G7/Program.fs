@@ -1,4 +1,4 @@
-﻿/ Learn more about F# at http://fsharp.org
+﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 
 open System.IO
@@ -33,6 +33,7 @@ let jsPath5 = baseDirectory + jsonFile5
 
 
 type JsonData = JsonProvider<jsPath5>
+let doc = JsonData.GetSample()
 // for splitting domains
 //printfn "Testing for splitting"
 let splitDomain (text: string) = 
@@ -42,10 +43,26 @@ let splitDomain (text: string) =
     //printfn "%A" word
     word
 
-(*
-let domainMapping jsonFile = 
-    type Data = new JsonProvider<jsonFile>
-    let doc = JsonData.GetSample()
+// for splitting attributes
+let splitAttr (text: string) = 
+    let mutable cleanText = text
+    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "")
+    let word = cleanText.Split ','
+    word
+
+// FOR ATTRIBUTES PROCESSING
+let attrs = doc.Attributes.JsonValue.Properties
+let attrList = new List<string>()
+for attr in attrs do 
+   attrList.Add(attr.ToString())
+let mutable indexMap = Map.empty
+let mutable tempMap = Map.empty
+
+for item in attrList do 
+    //printfn "testing"
+    let result = splitAttr item //splitLine item
+    indexMap <- indexMap.Add((result.[1]).Trim(), (result.[0]).Trim() |> int)
+    tempMap <- tempMap.Add((result.[0]).Trim() |> int, (result.[1]).Trim())
     // FOR DOMAIN PROCESSING
     let domains = doc.Domain.JsonValue.Properties
     let domainList = new List<string>()
@@ -63,25 +80,6 @@ let domainMapping jsonFile =
         let value = result.[1].Split ',' |> Array.toList |> List.map (fun x -> x.Trim())
         //printfn "%A" value
         domMap <- domMap.Add(tempMap.Item(key), value)
-// for splitting attributes
-let splitAttr (text: string) = 
-    let mutable cleanText = text
-    cleanText <- cleanText.Replace("(", "").Replace(")", "").Replace("\"", "")
-    let word = cleanText.Split ','
-    word
-// FOR ATTRIBUTES PROCESSING
-let attrs = doc.Attributes.JsonValue.Properties
-let attrList = new List<string>()
-for attr in attrs do 
-   attrList.Add(attr.ToString())
-let mutable indexMap = Map.empty
-let mutable tempMap = Map.empty
-for item in attrList do 
-    //printfn "testing"
-    let result = splitAttr item //splitLine item
-    indexMap <- indexMap.Add((result.[1]).Trim(), (result.[0]).Trim() |> int)
-    tempMap <- tempMap.Add((result.[0]).Trim() |> int, (result.[1]).Trim())
-*)
 
 
 
