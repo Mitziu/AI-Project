@@ -25,7 +25,7 @@ let tennisAttributes = Map.empty.
 
 // My test of the classification
 let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\source\repos\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
-                     Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
+                    Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 
 
 // This is a really bad way to do it right now, but I need some map from class to its attributes,
@@ -395,6 +395,9 @@ let rec classify (node:DecisionTree) (row:string list) (indexMap: Map<string, in
         let index = (Map.find attribute indexMap)
         //Extracts the attribute value
         let attributeValue = row.[index]
+        //printfn "%s" attributeValue
+        //printfn "%O" attributeMap
+        //printfn "%O" node
         //Loads the correct child node
         let newNode = (Map.find attributeValue attributeMap)
         //Recursively traverses to the next correct child node
