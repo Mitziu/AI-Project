@@ -24,7 +24,7 @@ let tennisAttributes = Map.empty.
                         Add("windy",["false";"true"])
 
 // My test of the classification
-let tennisExamples = System.IO.File.ReadLines(@"C:\Users\Mitziu\source\repos\AI-Project2\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
+let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\source\repos\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
                      Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 
 
@@ -352,7 +352,7 @@ let getSubtrees (subtrees: Map<string,DecisionTree>) : (string * DecisionTree) l
 //@attributes: Attribute map
 //@index: Index map
 //@classes: Possible class values
-let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
+let rec pruneHelper (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) : DecisionTree = 
     match tree with
     | LeafNode (classification, examples) -> LeafNode (classification,examples)
     | InnerNode (attribute, subtrees, examples) ->
@@ -361,9 +361,13 @@ let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (inde
         let otherNodes = (Set.ofList children) - (Set.ofList maybePrune) |> Set.toList in
         let chiTested = List.map (fun (x,y) -> (x,chiTest y attributes index classes)) maybePrune in
         let allNodes = List.append otherNodes chiTested in
-        let recurse = List.map (fun (x,y) -> (x,prune y attributes index classes)) allNodes in
+        let recurse = List.map (fun (x,y) -> (x,pruneHelper y attributes index classes)) allNodes in
         let newSubtrees = Map.ofList recurse in
         InnerNode(attribute, newSubtrees, examples)
+
+let rec prune (tree : DecisionTree) (attributes : Map<string,string list>) (index : Map<string,int>) (classes : string list) =
+    let prunedTree = pruneHelper tree attributes index classes in
+    if tree = prunedTree then prunedTree else prune prunedTree attributes index classes
 
 //DTL wrapper that allows a true/false variable to account for pruning
 //@examples: Examples for decision tree
