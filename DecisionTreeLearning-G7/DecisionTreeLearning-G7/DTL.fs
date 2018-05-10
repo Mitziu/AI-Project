@@ -24,7 +24,7 @@ let tennisAttributes = Map.empty.
                         Add("windy",["false";"true"])
 
 // My test of the classification
-let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\Documents\Stuff\School\Spring 2018\tennis.txt") |>
+let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\source\repos\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
                      Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 
 
