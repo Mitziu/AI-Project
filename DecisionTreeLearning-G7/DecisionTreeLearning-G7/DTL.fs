@@ -486,11 +486,37 @@ let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) =
 //@k: How many folds
 //@attributes: Attributes map read from JSON
 //@indexMap: Index map read from JSON
-let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) : (float) = 
+let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) (depth: int) : (float * float) = 
     let train_test_sets = create_k_folds data k
     let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
-    let results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap -1 pruning) indexMap)
-    List.average results
+    let validation_results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap depth pruning) indexMap)
+    let train_results = train_test_sets |> List.map(fun (train, test) -> testAccuracy train (dtl train attributes [] indexMap depth pruning) indexMap)
+
+    (List.average train_results, List.average validation_results)
+
+let find_best_model (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) =
+    let mutable depth = 1
+    let mutable test_results = []
+    let mutable converge = false
+    while (converge = false) do
+        let scores = k_fold_validation data k attributes indexMap false depth
+        match scores with
+        | (train, test) when train = 0.0 -> 
+            test_results <- [test] |> List.append test_results
+            depth <- depth + 1
+            converge <- true
+        | (train, test) -> 
+            test_results <- [test] |> List.append test_results
+            depth <- depth + 1
+    
+    let best_depth = test_results |> Seq.mapi (fun index value -> index, value) |> Seq.minBy snd
+    match best_depth with
+        | (index, value) -> dtl data attributes [] indexMap false (index + 1)
+
+    
+    //@depth: How deep the tree is allowed to go, -1 for no limit
+    //let dtl (examples : string list list) (attributes : Map<string,string list>) (parentExamples : string list list) (index : Map<string,int>) (depth : int) (pruning : bool) =
+
 
 (* Commented out because already another main in Program.fs
 [<EntryPoint>]
