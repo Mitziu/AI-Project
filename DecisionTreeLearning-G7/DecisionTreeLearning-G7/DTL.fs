@@ -392,7 +392,7 @@ let rec classify (node:DecisionTree) (row:string list) (indexMap: Map<string, in
     | LeafNode (decision,_) -> decision
     | InnerNode (attribute, attributeMap, _) -> 
         //Obtains the correct Index
-        printfn "%s" attribute
+        //printfn "%s" attribute
         let index = (Map.find attribute indexMap)
         //Extracts the attribute value
         let attributeValue = row.[index]

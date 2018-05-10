@@ -176,11 +176,11 @@ let main argv =
     //printfn "%s" jsonFile
     //printfn "%s" dataFile
     
-    let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 false 
+    //let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 true
     //let bestModel = DTL.find_best_model dataset 4 attrMap indexMap
-    //let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap false -1
-    printfn "%O" dtlTest
-    //printfn "%f %f" (fst accuracy) (snd accuracy)
+    let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
+    //printfn "%O" dtlTest
+    printfn "%f %f" (fst accuracy) (snd accuracy)
     //printfn "%A" (domMap.Item("a1"))
     //printfn "%A" argv
     0 // return an integer exit code
