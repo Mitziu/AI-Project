@@ -24,7 +24,7 @@ let tennisAttributes = Map.empty.
                         Add("windy",["false";"true"])
 
 // My test of the classification
-let tennisExamples = System.IO.File.ReadLines(@"C:\Users\grant\source\repos\AI-Project\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
+let tennisExamples = System.IO.File.ReadLines(@"C:\Users\Mitziu\source\repos\AI-Project2\DecisionTreeLearning-G7\DecisionTreeLearning-G7\data\tennis.txt") |>
                      Seq.map (fun L -> (L.Split ',') |> Array.toList) |> Seq.toList
 
 
@@ -411,8 +411,6 @@ let classifyAllRows (data:string list list) (root:DecisionTree) (indexMap: Map<s
 let testAccuracy (testData:string list list) (root:DecisionTree) (indexMap: Map<string, int>) = 
     let testDataResults = classifyAllRows testData root indexMap
     let groundTruth = testData |> List.map (fun row -> row.[indexMap.["class"]])
-    printfn "%A" testDataResults
-    printfn "%A" groundTruth
     let result = List.map2 (fun a b -> a = b) testDataResults groundTruth
     let accuracy = float (result |> List.sumBy (fun x -> if x = true then 1 else 0)) / float (List.length result)
     accuracy
@@ -486,18 +484,27 @@ let create_k_folds (data: 'a list) (k: int) : (('a list list * 'a list) list) =
 //@k: How many folds
 //@attributes: Attributes map read from JSON
 //@indexMap: Index map read from JSON
+//@pruning: Xi^2 pruning
+//@depth: Depth to be used for pruning
 let k_fold_validation (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) (pruning : bool) (depth: int) : (float * float) = 
     let train_test_sets = create_k_folds data k
     let train_test_sets = train_test_sets |> List.map (fun (tr,te) -> (List.concat tr, te))    
     let validation_results = train_test_sets |> List.map (fun (train, test) -> testAccuracy test (dtl train attributes [] indexMap depth pruning) indexMap)
     let train_results = train_test_sets |> List.map(fun (train, test) -> testAccuracy train (dtl train attributes [] indexMap depth pruning) indexMap)
 
-    (List.average train_results, List.average validation_results)
+    ((1.0 - List.average train_results), (1.0 - List.average validation_results))
 
+//Returns the model with the lowest validation error
+//@data: data read from CSV file
+//@k: How many folds
+//@attributes: Attributes map read from JSON
+//@indexMap: Index map read from JSON
 let find_best_model (data: string list list) (k: int) (attributes: Map<string, string list>) (indexMap: Map<string, int>) =
     let mutable depth = 1
     let mutable test_results = []
     let mutable converge = false
+    //Finds point where training error converges
+    //Stops while loop when train error reaches 0.0
     while (converge = false) do
         let scores = k_fold_validation data k attributes indexMap false depth
         match scores with
@@ -509,6 +516,7 @@ let find_best_model (data: string list list) (k: int) (attributes: Map<string, s
             test_results <- [test] |> List.append test_results
             depth <- depth + 1
     
+    //Finds best depth and returns a model built with that parameter
     let best_depth = test_results |> Seq.mapi (fun index value -> index, value) |> Seq.minBy snd
     match best_depth with
         | (index, value) -> dtl data attributes [] indexMap (index + 1) false
