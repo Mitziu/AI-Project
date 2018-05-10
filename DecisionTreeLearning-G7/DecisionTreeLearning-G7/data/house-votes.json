@@ -1,0 +1,43 @@
+{
+	"attributes": {
+		
+		"0": "handicapped-infants", 
+		"1": "water-project-cost-sharing", 
+		"2": "adoption-of-the-budget-resulution", 
+		"3": "physician-fee-freeze", 
+		"4": "el-salvador-aid", 
+		"5": "religious-groups-in-schools", 
+		"6": "anti-satellite-test-ban", 
+		"7": "aid-to-nicaraguan-contras",
+		"8": "mx-missile",
+		"9": "immigration", 
+		"10": "synfuels-corporation-cutback", 
+		"11": "education-spending", 
+		"12": "superfund-right-to-sue", 
+		"13": "crime", 
+		"14": "duty-free-exports", 
+		"15": "export-administration-act-south-africa", 
+		"16": "class"
+	}, 
+
+	"domain": {
+		"0": ["y", "n"], 
+		"1": ["y", "n", "?"],
+		"2": ["y", "n", "?"],
+		"3": ["y", "n", "?"],
+		"4": ["y", "n", "?"], 
+		"5": ["y", "n", "?"], 
+		"6": ["y", "n", "?"], 
+		"7": ["y", "n", "?"],
+		"8": ["y", "n", "?"],
+		"9": ["y", "n", "?"],
+		"10": ["y", "n", "?"],
+		"11": ["y", "n", "?"],
+		"12": ["y", "n", "?"],
+		"13": ["y", "n", "?"], 
+		"14": ["y", "n", "?"],
+		"15": ["y", "n", "?"],
+		"16": ["democrat", "republican"] 
+	}
+
+}
