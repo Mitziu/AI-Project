@@ -1,0 +1,3 @@
+432
+No prune accuracy: 0.839080
+WIth prune accuracy: 0.770115

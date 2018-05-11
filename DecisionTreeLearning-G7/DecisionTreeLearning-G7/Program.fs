@@ -161,6 +161,28 @@ let getMaps jsonFileName =
     let attDomTup = domainMapping path
     attDomTup
 
+// shuffles dataset
+// @ r: seed 
+let shuffleR (r: Random) xs = xs |> Seq.sortBy (fun _ -> r.Next())
+
+// creating train test dataset
+// @listOfListData: list of list datasets 
+let trainTestData listOfListData = 
+    let trainTestData = listOfListData |> List.toSeq |> shuffleR (System.Random 1)
+    //printfn "original dataset length" 
+    //printfn "%d" (listOfListData.Length)
+    let trainDataCount = float listOfListData.Length * 0.8 
+    let training = trainTestData |> Seq.take (int trainDataCount)
+    //printfn "trainTestData" 
+    //printfn "%A" trainTestData
+    //printfn "%A" training
+    //printfn "%d" (Seq.length training)
+    
+    let testing = trainTestData |> Seq.skip (int trainDataCount)
+    //printfn "%A" testing 
+    //printfn "%d" (Seq.length testing)
+    (List.ofSeq training, List.ofSeq testing)
+
 [<EntryPoint>]
 let main argv = 
     
@@ -175,12 +197,25 @@ let main argv =
     //printfn "%A" dataset
     //printfn "%s" jsonFile
     //printfn "%s" dataFile
-    
+    let trainDataset, testDataset = trainTestData dataset
+    let trainNoPrune = DTL.dtl trainDataset attrMap [] indexMap -1 false
+    let trainPrune = DTL.dtl trainDataset attrMap [] indexMap -1 true
+
+    let noPruneAcc = DTL.testAccuracy testDataset trainNoPrune indexMap
+    let pruneAcc = DTL.testAccuracy testDataset trainPrune indexMap
+
+    printfn "No prune accuracy: %f" noPruneAcc
+    printfn "With prune accuracy: %f" pruneAcc
+
+    //printfn "%A" trainDataset
+   // printfn "%d" (trainDataset.Length) 
+    //printfn "%A" testDataset
+    //printfn "%d" (testDataset.Length)
     //let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 true
     //let bestModel = DTL.find_best_model dataset 4 attrMap indexMap
-    let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
+    //let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
     //printfn "%O" dtlTest
-    printfn "%f %f" (fst accuracy) (snd accuracy)
+    //printfn "%f %f" (fst accuracy) (snd accuracy)
     //printfn "%A" (domMap.Item("a1"))
     //printfn "%A" argv
     0 // return an integer exit code
