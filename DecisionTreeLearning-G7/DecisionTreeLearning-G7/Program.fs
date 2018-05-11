@@ -165,24 +165,18 @@ let getMaps jsonFileName =
 
 [<EntryPoint>]
 let main argv = 
-    
-    let jsonFile = argv.[0].Trim()
+    let inputTreeFile = argv.[0].Trim()
+    //let jsonFile = argv.[0].Trim()
     let dataFile = argv.[1].Trim()
-    //let decisionTreePath = argv.[2].Trim()
-    let dataset = getSanitizedData dataFile 
+    let jsonFile = argv.[2].Trim()
+    let dataset = getSanitizedData dataFile
     let domMap, indexMap = getMaps jsonFile
-    let attrMap = Map.remove "class" domMap 
+    let jsonTree = File.ReadAllText(inputTreeFile)
+    let inputTree = Json.deserialize<DTL.DecisionTree> jsonTree
+    let classifications = DTL.classifyAllRows dataset inputTree indexMap
+    classifications |> List.iter (printf "%s,")
 
-    //printfn "%A" attrMap
-    //printfn "%A" indexMap
-    //printfn "%A" dataset
-    //printfn "%s" jsonFile
-    //printfn "%s" dataFile
-    
-    let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 true
-    let jsonTree = Json.serialize(dtlTest)
-    printfn "%s" jsonTree
-
+    //printfn "%O" inputTree
     //DTL.dumpToJson(dtlTest, decisionTreePath)
     //let bestModel = DTL.find_best_model dataset 4 attrMap indexMap
     //let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
