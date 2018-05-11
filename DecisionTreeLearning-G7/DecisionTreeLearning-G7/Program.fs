@@ -160,8 +160,27 @@ let getMaps jsonFileName =
  
     let attDomTup = domainMapping path
     attDomTup  
- 
 
+// shuffles dataset
+let shuffleR (r: Random) xs = xs |> Seq.sortBy (fun _ -> r.Next())
+
+// creating train test dataset
+// @listOfListData: list of list datasets 
+let trainTestData listOfListData = 
+    let trainTestData = listOfListData |> List.toSeq |> shuffleR (System.Random 1)
+    //printfn "original dataset length" 
+    printfn "%d" (listOfListData.Length)
+    let trainDataCount = float listOfListData.Length * 0.8 
+    let training = trainTestData |> Seq.take (int trainDataCount)
+    //printfn "trainTestData" 
+    //printfn "%A" trainTestData
+    //printfn "%A" training
+    //printfn "%d" (Seq.length training)
+    
+    let testing = trainTestData |> Seq.skip (int trainDataCount)
+    //printfn "%A" testing 
+    //printfn "%d" (Seq.length testing)
+    (List.ofSeq training, List.ofSeq testing)
 
 
 [<EntryPoint>]
@@ -171,12 +190,18 @@ let main argv =
     let dataFile = argv.[1].Trim()
     let dataset = getSanitizedData dataFile 
     let domMap, indexMap = getMaps jsonFile
-
+    let trainDataset, testDataset = trainTestData dataset
+    printfn "%A" trainDataset
+    printfn "%d" (trainDataset.Length) 
+    printfn "%A" testDataset
+    printfn "%d" (testDataset.Length)
+    (*
     printfn "%A" domMap
     printfn "%A" indexMap
     printfn "%A" dataset
     printfn "%s" jsonFile
     printfn "%s" dataFile
+	*)
     //printfn "%A" (domMap.Item("a1"))
     //printfn "%A" argv
     0 // return an integer exit code
