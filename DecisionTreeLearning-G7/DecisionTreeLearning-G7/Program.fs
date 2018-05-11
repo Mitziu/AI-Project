@@ -200,12 +200,15 @@ let main argv =
     let trainDataset, testDataset = trainTestData dataset
     let trainNoPrune = DTL.dtl trainDataset attrMap [] indexMap -1 false
     let trainPrune = DTL.dtl trainDataset attrMap [] indexMap -1 true
+    let modelSelected = DTL.find_best_model trainDataset 4 attrMap indexMap
 
     let noPruneAcc = DTL.testAccuracy testDataset trainNoPrune indexMap
     let pruneAcc = DTL.testAccuracy testDataset trainPrune indexMap
+    let depthAcc = DTL.testAccuracy testDataset modelSelected indexMap
 
     printfn "No prune accuracy: %f" noPruneAcc
     printfn "With prune accuracy: %f" pruneAcc
+    printfn "Depth pruned accuracy: %f" depthAcc
 
     //printfn "%A" trainDataset
    // printfn "%d" (trainDataset.Length) 
