@@ -1,0 +1,3014 @@
+InnerNode
+  ("deg-malig",
+   map
+     [("1",
+       InnerNode
+         ("tumor-size",
+          map
+            [("0-4",
+              LeafNode
+                ("no-recurrence-events",
+                 [["50-59"; "ge40"; "0-4"; "0-2"; "no"; "1"; "right"; "central";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "0-4"; "0-2"; "no"; "1"; "left"; "left_low";
+                   "no"; "no-recurrence-events"];
+                  ["70-79"; "ge40"; "0-4"; "0-2"; "no"; "1"; "left"; "right_low";
+                   "no"; "no-recurrence-events"]]));
+             ("10-14",
+              LeafNode
+                ("no-recurrence-events",
+                 [["60-69"; "lt40"; "10-14"; "0-2"; "no"; "1"; "left";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "10-14"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "10-14"; "3-5"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"]]));
+             ("15-19",
+              InnerNode
+                ("age",
+                 map
+                   [("10-19", LeafNode ("no-recurrence-events",[]));
+                    ("20-29", LeafNode ("no-recurrence-events",[]));
+                    ("30-39",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "right";
+                          "left_low"; "no"; "recurrence-events"]]));
+                    ("40-49", LeafNode ("no-recurrence-events",[]));
+                    ("50-59",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("60-69",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "left";
+                          "right_low"; "no"; "no-recurrence-events"]]));
+                    ("70-79",
+                     LeafNode
+                       ("recurrence-events",
+                        [["70-79"; "ge40"; "15-19"; "9-11"; "?"; "1"; "left";
+                          "left_low"; "yes"; "recurrence-events"]]));
+                    ("80-89", LeafNode ("no-recurrence-events",[]));
+                    ("90-99", LeafNode ("no-recurrence-events",[]))],
+                 [["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["70-79"; "ge40"; "15-19"; "9-11"; "?"; "1"; "left";
+                   "left_low"; "yes"; "recurrence-events"]]));
+             ("20-24",
+              InnerNode
+                ("menopause",
+                 map
+                   [("ge40",
+                     InnerNode
+                       ("breast-quad",
+                        map
+                          [("?", LeafNode ("no-recurrence-events",[]));
+                           ("central", LeafNode ("no-recurrence-events",[]));
+                           ("left_low",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "1";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("left_up",
+                            LeafNode
+                              ("recurrence-events",
+                               [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1";
+                                 "right"; "left_up"; "no"; "recurrence-events"]]));
+                           ("right_low", LeafNode ("no-recurrence-events",[]));
+                           ("right_up", LeafNode ("no-recurrence-events",[]))],
+                        [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("lt40",
+                     LeafNode
+                       ("recurrence-events",
+                        [["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left";
+                          "left_up"; "no"; "recurrence-events"];
+                         ["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left";
+                          "left_low"; "no"; "recurrence-events"]]));
+                    ("premeno",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left";
+                          "right_low"; "no"; "no-recurrence-events"]]))],
+                 [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left"; "left_up";
+                   "no"; "recurrence-events"];
+                  ["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left"; "left_low";
+                   "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("25-29",
+              InnerNode
+                ("breast-quad",
+                 map
+                   [("?", LeafNode ("no-recurrence-events",[]));
+                    ("central",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["30-39"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("left_low",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("left_up",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39", LeafNode ("no-recurrence-events",[]));
+                           ("40-49", LeafNode ("no-recurrence-events",[]));
+                           ("50-59",
+                            InnerNode
+                              ("breast",
+                               map
+                                 [("left", LeafNode ("no-recurrence-events",[]));
+                                  ("right",
+                                   InnerNode
+                                     ("inv-nodes",
+                                      map
+                                        [("0-2",
+                                          InnerNode
+                                            ("irradiat",
+                                             map
+                                               [("?",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]));
+                                                ("no",
+                                                 InnerNode
+                                                   ("menopause",
+                                                    map
+                                                      [("ge40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("lt40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("premeno",
+                                                        InnerNode
+                                                          ("node-caps",
+                                                           map
+                                                             [("?",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("no",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  [["50-59";
+                                                                    "premeno";
+                                                                    "25-29";
+                                                                    "0-2"; "no";
+                                                                    "1"; "right";
+                                                                    "left_up";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["50-59";
+                                                                    "premeno";
+                                                                    "25-29";
+                                                                    "0-2"; "no";
+                                                                    "1"; "right";
+                                                                    "left_up";
+                                                                    "no";
+                                                                    "recurrence-events"]]));
+                                                              ("yes",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []))],
+                                                           [["50-59"; "premeno";
+                                                             "25-29"; "0-2";
+                                                             "no"; "1"; "right";
+                                                             "left_up"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["50-59"; "premeno";
+                                                             "25-29"; "0-2";
+                                                             "no"; "1"; "right";
+                                                             "left_up"; "no";
+                                                             "recurrence-events"]]))],
+                                                    [["50-59"; "premeno";
+                                                      "25-29"; "0-2"; "no"; "1";
+                                                      "right"; "left_up"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["50-59"; "premeno";
+                                                      "25-29"; "0-2"; "no"; "1";
+                                                      "right"; "left_up"; "no";
+                                                      "recurrence-events"]]));
+                                                ("yes",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]))],
+                                             [["50-59"; "premeno"; "25-29";
+                                               "0-2"; "no"; "1"; "right";
+                                               "left_up"; "no";
+                                               "no-recurrence-events"];
+                                              ["50-59"; "premeno"; "25-29";
+                                               "0-2"; "no"; "1"; "right";
+                                               "left_up"; "no";
+                                               "recurrence-events"]]));
+                                         ("12-14",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("15-17",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("18-20",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("21-23",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("24-26",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("27-29",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("3-5",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("30-32",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ...],
+                                      [["50-59"; "premeno"; "25-29"; "0-2"; "no";
+                                        "1"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["50-59"; "premeno"; "25-29"; "0-2"; "no";
+                                        "1"; "right"; "left_up"; "no";
+                                        "recurrence-events"]]))],
+                               [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1";
+                                 "right"; "left_up"; "no"; "recurrence-events"]]));
+                           ("60-69",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("right_low",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left";
+                          "right_low"; "no"; "no-recurrence-events"]]));
+                    ("right_up", LeafNode ("no-recurrence-events",[]))],
+                 [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right"; "left_up";
+                   "yes"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("30-34",
+              InnerNode
+                ("age",
+                 map
+                   [("10-19", LeafNode ("no-recurrence-events",[]));
+                    ("20-29", LeafNode ("no-recurrence-events",[]));
+                    ("30-39",
+                     LeafNode
+                       ("recurrence-events",
+                        [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("40-49",
+                     InnerNode
+                       ("irradiat",
+                        map
+                          [("?", LeafNode ("no-recurrence-events",[]));
+                           ("no",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1";
+                                 "left"; "right_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"]]));
+                           ("yes",
+                            LeafNode
+                              ("recurrence-events",
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1";
+                                 "left"; "left_low"; "yes"; "recurrence-events"]]))],
+                        [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "yes"; "recurrence-events"]]));
+                    ("50-59",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("60-69",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["60-69"; "lt40"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"]]));
+                    ("70-79", LeafNode ("no-recurrence-events",[]));
+                    ("80-89", LeafNode ("no-recurrence-events",[]));
+                    ("90-99", LeafNode ("no-recurrence-events",[]))],
+                 [["60-69"; "lt40"; "30-34"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "yes"; "recurrence-events"]]));
+             ("35-39",
+              LeafNode
+                ("no-recurrence-events",
+                 [["40-49"; "premeno"; "35-39"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("40-44",
+              InnerNode
+                ("breast",
+                 map
+                   [("left",
+                     LeafNode
+                       ("recurrence-events",
+                        [["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("right",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "right";
+                          "left_up"; "no"; "no-recurrence-events"]]))],
+                 [["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("45-49",
+              LeafNode
+                ("recurrence-events",
+                 [["60-69"; "ge40"; "45-49"; "0-2"; "no"; "1"; "right";
+                   "right_up"; "yes"; "recurrence-events"]])); ...],
+          [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "lt40"; "10-14"; "0-2"; "no"; "1"; "left"; "right_up"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "lt40"; "30-34"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right"; "central"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "5-9"; "0-2"; "no"; "1"; "left"; "central"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "50-54"; "0-2"; "no"; "1"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["70-79"; "ge40"; "40-44"; "0-2"; "no"; "1"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "0-4"; "0-2"; "no"; "1"; "right"; "central"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "0-4"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left"; "central";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "1"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["70-79"; "ge40"; "0-4"; "0-2"; "no"; "1"; "left"; "right_low"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "10-14"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "1"; "right"; "central"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "10-14"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "1"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "5-9"; "0-2"; "no"; "1"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "1"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left"; "central";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "1"; "right"; "central"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right"; "left_up"; "yes";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "25-29"; "3-5"; "?"; "1"; "right"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "1"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "10-14"; "3-5"; "no"; "1"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left"; "left_low";
+            "no"; "recurrence-events"];
+           ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "recurrence-events"];
+           ["30-39"; "premeno"; "15-19"; "0-2"; "no"; "1"; "right"; "left_low";
+            "no"; "recurrence-events"];
+           ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "1"; "right"; "left_up";
+            "no"; "recurrence-events"];
+           ["60-69"; "ge40"; "45-49"; "0-2"; "no"; "1"; "right"; "right_up";
+            "yes"; "recurrence-events"];
+           ["70-79"; "ge40"; "15-19"; "9-11"; "?"; "1"; "left"; "left_low";
+            "yes"; "recurrence-events"];
+           ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "1"; "left"; "left_up";
+            "no"; "recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "1"; "left"; "left_low";
+            "yes"; "recurrence-events"];
+           ["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left"; "left_up"; "no";
+            "recurrence-events"];
+           ["50-59"; "lt40"; "20-24"; "0-2"; "?"; "1"; "left"; "left_low"; "no";
+            "recurrence-events"];
+           ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "1"; "right"; "left_up"; "no";
+            "recurrence-events"]]));
+      ("2",
+       InnerNode
+         ("tumor-size",
+          map
+            [("0-4",
+              InnerNode
+                ("age",
+                 map
+                   [("10-19", LeafNode ("no-recurrence-events",[]));
+                    ("20-29", LeafNode ("no-recurrence-events",[]));
+                    ("30-39",
+                     InnerNode
+                       ("breast",
+                        map
+                          [("left", LeafNode ("no-recurrence-events",[]));
+                           ("right",
+                            InnerNode
+                              ("breast-quad",
+                               map
+                                 [("?", LeafNode ("no-recurrence-events",[]));
+                                  ("central",
+                                   InnerNode
+                                     ("inv-nodes",
+                                      map
+                                        [("0-2",
+                                          InnerNode
+                                            ("irradiat",
+                                             map
+                                               [("?",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]));
+                                                ("no",
+                                                 InnerNode
+                                                   ("menopause",
+                                                    map
+                                                      [("ge40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("lt40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("premeno",
+                                                        InnerNode
+                                                          ("node-caps",
+                                                           map
+                                                             [("?",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("no",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  [["30-39";
+                                                                    "premeno";
+                                                                    "0-4"; "0-2";
+                                                                    "no"; "2";
+                                                                    "right";
+                                                                    "central";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["30-39";
+                                                                    "premeno";
+                                                                    "0-4"; "0-2";
+                                                                    "no"; "2";
+                                                                    "right";
+                                                                    "central";
+                                                                    "no";
+                                                                    "recurrence-events"]]));
+                                                              ("yes",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []))],
+                                                           [["30-39"; "premeno";
+                                                             "0-4"; "0-2"; "no";
+                                                             "2"; "right";
+                                                             "central"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["30-39"; "premeno";
+                                                             "0-4"; "0-2"; "no";
+                                                             "2"; "right";
+                                                             "central"; "no";
+                                                             "recurrence-events"]]))],
+                                                    [["30-39"; "premeno"; "0-4";
+                                                      "0-2"; "no"; "2"; "right";
+                                                      "central"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["30-39"; "premeno"; "0-4";
+                                                      "0-2"; "no"; "2"; "right";
+                                                      "central"; "no";
+                                                      "recurrence-events"]]));
+                                                ("yes",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]))],
+                                             [["30-39"; "premeno"; "0-4"; "0-2";
+                                               "no"; "2"; "right"; "central";
+                                               "no"; "no-recurrence-events"];
+                                              ["30-39"; "premeno"; "0-4"; "0-2";
+                                               "no"; "2"; "right"; "central";
+                                               "no"; "recurrence-events"]]));
+                                         ("12-14",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("15-17",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("18-20",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("21-23",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("24-26",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("27-29",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("3-5",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("30-32",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ...],
+                                      [["30-39"; "premeno"; "0-4"; "0-2"; "no";
+                                        "2"; "right"; "central"; "no";
+                                        "no-recurrence-events"];
+                                       ["30-39"; "premeno"; "0-4"; "0-2"; "no";
+                                        "2"; "right"; "central"; "no";
+                                        "recurrence-events"]]));
+                                  ("left_low",
+                                   LeafNode ("no-recurrence-events",[]));
+                                  ("left_up",
+                                   LeafNode ("no-recurrence-events",[]));
+                                  ("right_low",
+                                   LeafNode ("no-recurrence-events",[]));
+                                  ("right_up",
+                                   LeafNode ("no-recurrence-events",[]))],
+                               [["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2";
+                                 "right"; "central"; "no";
+                                 "no-recurrence-events"];
+                                ["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2";
+                                 "right"; "central"; "no"; "recurrence-events"]]))],
+                        [["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                          "central"; "no"; "recurrence-events"]]));
+                    ("40-49",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                          "right_low"; "no"; "no-recurrence-events"]]));
+                    ("50-59",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "0-4"; "0-2"; "no"; "2"; "left";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("60-69", LeafNode ("no-recurrence-events",[]));
+                    ("70-79", LeafNode ("no-recurrence-events",[]));
+                    ("80-89", LeafNode ("no-recurrence-events",[]));
+                    ("90-99", LeafNode ("no-recurrence-events",[]))],
+                 [["40-49"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "0-4"; "0-2"; "no"; "2"; "left"; "central";
+                   "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right";
+                   "central"; "no"; "recurrence-events"]]));
+             ("10-14",
+              LeafNode
+                ("no-recurrence-events",
+                 [["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["70-79"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left"; "central";
+                   "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"]]));
+             ("15-19",
+              InnerNode
+                ("menopause",
+                 map
+                   [("ge40",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "15-19"; "0-2"; "yes"; "2"; "left";
+                          "central"; "yes"; "no-recurrence-events"]]));
+                    ("lt40",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "lt40"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("premeno",
+                     InnerNode
+                       ("breast",
+                        map
+                          [("left",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("recurrence-events",[]));
+                                  ("20-29", LeafNode ("recurrence-events",[]));
+                                  ("30-39", LeafNode ("recurrence-events",[]));
+                                  ("40-49",
+                                   InnerNode
+                                     ("breast-quad",
+                                      map
+                                        [("?",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("central",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("left_low",
+                                          LeafNode
+                                            ("no-recurrence-events",
+                                             [["40-49"; "premeno"; "15-19";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_low"; "no";
+                                               "no-recurrence-events"]]));
+                                         ("left_up",
+                                          LeafNode
+                                            ("recurrence-events",
+                                             [["40-49"; "premeno"; "15-19";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_up"; "no";
+                                               "recurrence-events"]]));
+                                         ("right_low",
+                                          LeafNode ("no-recurrence-events",[]));
+                                         ("right_up",
+                                          LeafNode ("no-recurrence-events",[]))],
+                                      [["40-49"; "premeno"; "15-19"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "no";
+                                        "no-recurrence-events"];
+                                       ["40-49"; "premeno"; "15-19"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("50-59",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["50-59"; "premeno"; "15-19"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "no";
+                                        "recurrence-events"]]));
+                                  ("60-69", LeafNode ("recurrence-events",[]));
+                                  ("70-79", LeafNode ("recurrence-events",[]));
+                                  ("80-89", LeafNode ("recurrence-events",[]));
+                                  ("90-99", LeafNode ("recurrence-events",[]))],
+                               [["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "recurrence-events"]]));
+                           ("right",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2";
+                                 "right"; "right_low"; "no";
+                                 "no-recurrence-events"]]))],
+                        [["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "recurrence-events"]]))],
+                 [["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "lt40"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "15-19"; "0-2"; "yes"; "2"; "left";
+                   "central"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("20-24",
+              InnerNode
+                ("breast-quad",
+                 map
+                   [("?", LeafNode ("no-recurrence-events",[]));
+                    ("central",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["30-39"; "premeno"; "20-24"; "3-5"; "no"; "2";
+                                 "right"; "central"; "no";
+                                 "no-recurrence-events"]]));
+                           ("40-49",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "central"; "no"; "no-recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("recurrence-events",
+                               [["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "central"; "no"; "recurrence-events"]]));
+                           ("60-69", LeafNode ("no-recurrence-events",[]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "central"; "no"; "recurrence-events"]]));
+                    ("left_low",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            LeafNode
+                              ("recurrence-events",
+                               [["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                                 "left"; "left_low"; "no"; "recurrence-events"]]));
+                           ("40-49",
+                            InnerNode
+                              ("breast",
+                               map
+                                 [("left",
+                                   InnerNode
+                                     ("inv-nodes",
+                                      map
+                                        [("0-2",
+                                          InnerNode
+                                            ("irradiat",
+                                             map
+                                               [("?",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]));
+                                                ("no",
+                                                 InnerNode
+                                                   ("menopause",
+                                                    map
+                                                      [("ge40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("lt40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("premeno",
+                                                        InnerNode
+                                                          ("node-caps",
+                                                           map
+                                                             [("?",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("no",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  [["40-49";
+                                                                    "premeno";
+                                                                    "20-24";
+                                                                    "0-2"; "no";
+                                                                    "2"; "left";
+                                                                    "left_low";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["40-49";
+                                                                    "premeno";
+                                                                    "20-24";
+                                                                    "0-2"; "no";
+                                                                    "2"; "left";
+                                                                    "left_low";
+                                                                    "no";
+                                                                    "recurrence-events"]]));
+                                                              ("yes",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []))],
+                                                           [["40-49"; "premeno";
+                                                             "20-24"; "0-2";
+                                                             "no"; "2"; "left";
+                                                             "left_low"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["40-49"; "premeno";
+                                                             "20-24"; "0-2";
+                                                             "no"; "2"; "left";
+                                                             "left_low"; "no";
+                                                             "recurrence-events"]]))],
+                                                    [["40-49"; "premeno";
+                                                      "20-24"; "0-2"; "no"; "2";
+                                                      "left"; "left_low"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["40-49"; "premeno";
+                                                      "20-24"; "0-2"; "no"; "2";
+                                                      "left"; "left_low"; "no";
+                                                      "recurrence-events"]]));
+                                                ("yes",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]))],
+                                             [["40-49"; "premeno"; "20-24";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_low"; "no";
+                                               "no-recurrence-events"];
+                                              ["40-49"; "premeno"; "20-24";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_low"; "no";
+                                               "recurrence-events"]]));
+                                         ("12-14",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("15-17",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("18-20",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("21-23",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("24-26",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("27-29",
+                                          LeafNode ("recurrence-events",[]));
+                                         ("3-5",
+                                          LeafNode
+                                            ("recurrence-events",
+                                             [["40-49"; "premeno"; "20-24";
+                                               "3-5"; "yes"; "2"; "left";
+                                               "left_low"; "yes";
+                                               "recurrence-events"]]));
+                                         ("30-32",
+                                          LeafNode ("recurrence-events",[]));
+                                         ...],
+                                      [["40-49"; "premeno"; "20-24"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "no";
+                                        "no-recurrence-events"];
+                                       ["40-49"; "premeno"; "20-24"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "no";
+                                        "recurrence-events"];
+                                       ["40-49"; "premeno"; "20-24"; "3-5";
+                                        "yes"; "2"; "left"; "left_low"; "yes";
+                                        "recurrence-events"]]));
+                                  ("right",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "premeno"; "20-24"; "3-5"; "no";
+                                        "2"; "right"; "left_low"; "no";
+                                        "no-recurrence-events"];
+                                       ["40-49"; "premeno"; "20-24"; "6-8"; "no";
+                                        "2"; "right"; "left_low"; "yes";
+                                        "no-recurrence-events"]]))],
+                               [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "6-8"; "no"; "2";
+                                 "right"; "left_low"; "yes";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                                 "left"; "left_low"; "yes"; "recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["50-59"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("60-69",
+                            LeafNode
+                              ("recurrence-events",
+                               [["60-69"; "ge40"; "20-24"; "3-5"; "no"; "2";
+                                 "left"; "left_low"; "yes"; "recurrence-events"]]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "6-8"; "no"; "2"; "right";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "3-5"; "no"; "2"; "left";
+                          "left_low"; "yes"; "recurrence-events"];
+                         ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "yes"; "recurrence-events"]]));
+                    ("left_up",
+                     InnerNode
+                       ("menopause",
+                        map
+                          [("ge40",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("no-recurrence-events",[]));
+                                  ("20-29", LeafNode ("no-recurrence-events",[]));
+                                  ("30-39", LeafNode ("no-recurrence-events",[]));
+                                  ("40-49",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["40-49"; "ge40"; "20-24"; "0-2"; "no";
+                                        "2"; "right"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("50-59",
+                                   InnerNode
+                                     ("breast",
+                                      map
+                                        [("left",
+                                          LeafNode
+                                            ("recurrence-events",
+                                             [["50-59"; "ge40"; "20-24"; "0-2";
+                                               "no"; "2"; "left"; "left_up";
+                                               "no"; "recurrence-events"]]));
+                                         ("right",
+                                          LeafNode
+                                            ("no-recurrence-events",
+                                             [["50-59"; "ge40"; "20-24"; "0-2";
+                                               "no"; "2"; "right"; "left_up";
+                                               "no"; "no-recurrence-events"];
+                                              ["50-59"; "ge40"; "20-24"; "3-5";
+                                               "yes"; "2"; "right"; "left_up";
+                                               "no"; "no-recurrence-events"];
+                                              ["50-59"; "ge40"; "20-24"; "0-2";
+                                               "yes"; "2"; "right"; "left_up";
+                                               "no"; "no-recurrence-events"]]))],
+                                      [["50-59"; "ge40"; "20-24"; "0-2"; "no";
+                                        "2"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["50-59"; "ge40"; "20-24"; "3-5"; "yes";
+                                        "2"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["50-59"; "ge40"; "20-24"; "0-2"; "yes";
+                                        "2"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["50-59"; "ge40"; "20-24"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("60-69",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["60-69"; "ge40"; "20-24"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["60-69"; "ge40"; "20-24"; "0-2"; "no";
+                                        "2"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("70-79", LeafNode ("no-recurrence-events",[]));
+                                  ("80-89", LeafNode ("no-recurrence-events",[]));
+                                  ("90-99", LeafNode ("no-recurrence-events",[]))],
+                               [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "3-5"; "yes"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "yes"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "left_up"; "no"; "recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "recurrence-events"]]));
+                           ("lt40", LeafNode ("no-recurrence-events",[]));
+                           ("premeno",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"]]))],
+                        [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                          "right"; "left_up"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "3-5"; "yes"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "yes"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("right_low",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["30-39"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                          "right_low"; "no"; "no-recurrence-events"]]));
+                    ("right_up",
+                     InnerNode
+                       ("inv-nodes",
+                        map
+                          [("0-2",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2";
+                                 "right"; "right_up"; "no";
+                                 "no-recurrence-events"]]));
+                           ("12-14", LeafNode ("no-recurrence-events",[]));
+                           ("15-17", LeafNode ("no-recurrence-events",[]));
+                           ("18-20", LeafNode ("no-recurrence-events",[]));
+                           ("21-23", LeafNode ("no-recurrence-events",[]));
+                           ("24-26", LeafNode ("no-recurrence-events",[]));
+                           ("27-29", LeafNode ("no-recurrence-events",[]));
+                           ("3-5",
+                            LeafNode
+                              ("recurrence-events",
+                               [["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                                 "right"; "right_up"; "yes"; "recurrence-events"]]));
+                           ("30-32", LeafNode ("no-recurrence-events",[])); ...],
+                        [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2";
+                          "right"; "right_up"; "yes"; "recurrence-events"]]))],
+                 [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "3-5"; "yes"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "6-8"; "no"; "2"; "right";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "yes"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "central"; "no"; "recurrence-events"];
+                  ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "right";
+                   "right_up"; "yes"; "recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "3-5"; "no"; "2"; "left";
+                   "left_low"; "yes"; "recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "yes"; "recurrence-events"]]));
+             ("25-29",
+              InnerNode
+                ("breast-quad",
+                 map
+                   [("?", LeafNode ("no-recurrence-events",[]));
+                    ("central",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("left_low",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("40-49",
+                            InnerNode
+                              ("menopause",
+                               map
+                                 [("ge40",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "ge40"; "25-29"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("lt40", LeafNode ("recurrence-events",[]));
+                                  ("premeno",
+                                   InnerNode
+                                     ("breast",
+                                      map
+                                        [("left",
+                                          LeafNode
+                                            ("recurrence-events",
+                                             [["40-49"; "premeno"; "25-29";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_low"; "yes";
+                                               "recurrence-events"]]));
+                                         ("right",
+                                          InnerNode
+                                            ("inv-nodes",
+                                             map
+                                               [("0-2",
+                                                 InnerNode
+                                                   ("irradiat",
+                                                    map
+                                                      [("?",
+                                                        LeafNode
+                                                          ("recurrence-events",
+                                                           []));
+                                                       ("no",
+                                                        InnerNode
+                                                          ("node-caps",
+                                                           map
+                                                             [("?",
+                                                               LeafNode
+                                                                 ("recurrence-events",
+                                                                  []));
+                                                              ("no",
+                                                               LeafNode
+                                                                 ("recurrence-events",
+                                                                  [["40-49";
+                                                                    "premeno";
+                                                                    "25-29";
+                                                                    "0-2"; "no";
+                                                                    "2"; "right";
+                                                                    "left_low";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["40-49";
+                                                                    "premeno";
+                                                                    "25-29";
+                                                                    "0-2"; "no";
+                                                                    "2"; "right";
+                                                                    "left_low";
+                                                                    "no";
+                                                                    "recurrence-events"];
+                                                                   ["40-49";
+                                                                    "premeno";
+                                                                    "25-29";
+                                                                    "0-2"; "no";
+                                                                    "2"; "right";
+                                                                    "left_low";
+                                                                    "no";
+                                                                    "recurrence-events"]]));
+                                                              ("yes",
+                                                               LeafNode
+                                                                 ("recurrence-events",
+                                                                  []))],
+                                                           [["40-49"; "premeno";
+                                                             "25-29"; "0-2";
+                                                             "no"; "2"; "right";
+                                                             "left_low"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["40-49"; "premeno";
+                                                             "25-29"; "0-2";
+                                                             "no"; "2"; "right";
+                                                             "left_low"; "no";
+                                                             "recurrence-events"];
+                                                            ["40-49"; "premeno";
+                                                             "25-29"; "0-2";
+                                                             "no"; "2"; "right";
+                                                             "left_low"; "no";
+                                                             "recurrence-events"]]));
+                                                       ("yes",
+                                                        LeafNode
+                                                          ("recurrence-events",
+                                                           []))],
+                                                    [["40-49"; "premeno";
+                                                      "25-29"; "0-2"; "no"; "2";
+                                                      "right"; "left_low"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["40-49"; "premeno";
+                                                      "25-29"; "0-2"; "no"; "2";
+                                                      "right"; "left_low"; "no";
+                                                      "recurrence-events"];
+                                                     ["40-49"; "premeno";
+                                                      "25-29"; "0-2"; "no"; "2";
+                                                      "right"; "left_low"; "no";
+                                                      "recurrence-events"]]));
+                                                ("12-14",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("15-17",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("18-20",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("21-23",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("24-26",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("27-29",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("3-5",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ("30-32",
+                                                 LeafNode
+                                                   ("recurrence-events",[]));
+                                                ...],
+                                             [["40-49"; "premeno"; "25-29";
+                                               "0-2"; "no"; "2"; "right";
+                                               "left_low"; "no";
+                                               "no-recurrence-events"];
+                                              ["40-49"; "premeno"; "25-29";
+                                               "0-2"; "no"; "2"; "right";
+                                               "left_low"; "no";
+                                               "recurrence-events"];
+                                              ["40-49"; "premeno"; "25-29";
+                                               "0-2"; "no"; "2"; "right";
+                                               "left_low"; "no";
+                                               "recurrence-events"]]))],
+                                      [["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "2"; "right"; "left_low"; "no";
+                                        "no-recurrence-events"];
+                                       ["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "2"; "right"; "left_low"; "no";
+                                        "recurrence-events"];
+                                       ["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "2"; "right"; "left_low"; "no";
+                                        "recurrence-events"];
+                                       ["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "2"; "left"; "left_low"; "yes";
+                                        "recurrence-events"]]))],
+                               [["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "ge40"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "yes"; "recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "25-29"; "3-5"; "yes"; "2";
+                                 "left"; "left_low"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("60-69",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "yes"; "recurrence-events"]]));
+                    ("left_up",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "25-29"; "6-8"; "yes"; "2";
+                          "right"; "left_up"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "yes"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "3-5"; "no"; "2"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "yes"; "no-recurrence-events"]]));
+                    ("right_low",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "?"; "2"; "left";
+                          "right_low"; "yes"; "no-recurrence-events"]]));
+                    ("right_up",
+                     LeafNode
+                       ("recurrence-events",
+                        [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "3-5"; "no"; "2"; "right";
+                          "right_up"; "no"; "recurrence-events"]]))],
+                 [["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "25-29"; "6-8"; "yes"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "yes"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "?"; "2"; "left";
+                   "right_low"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "3-5"; "no"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "3-5"; "no"; "2"; "right";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "yes"; "recurrence-events"]]));
+             ("30-34",
+              InnerNode
+                ("breast-quad",
+                 map
+                   [("?", LeafNode ("no-recurrence-events",[]));
+                    ("central",
+                     LeafNode
+                       ("recurrence-events",
+                        [["60-69"; "ge40"; "30-34"; "3-5"; "yes"; "2"; "left";
+                          "central"; "yes"; "recurrence-events"]]));
+                    ("left_low",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2";
+                          "right"; "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("left_up",
+                     InnerNode
+                       ("inv-nodes",
+                        map
+                          [("0-2",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("no-recurrence-events",[]));
+                                  ("20-29", LeafNode ("no-recurrence-events",[]));
+                                  ("30-39",
+                                   InnerNode
+                                     ("breast",
+                                      map
+                                        [("left",
+                                          InnerNode
+                                            ("irradiat",
+                                             map
+                                               [("?",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]));
+                                                ("no",
+                                                 InnerNode
+                                                   ("menopause",
+                                                    map
+                                                      [("ge40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("lt40",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("premeno",
+                                                        InnerNode
+                                                          ("node-caps",
+                                                           map
+                                                             [("?",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("no",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  [["30-39";
+                                                                    "premeno";
+                                                                    "30-34";
+                                                                    "0-2"; "no";
+                                                                    "2"; "left";
+                                                                    "left_up";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["30-39";
+                                                                    "premeno";
+                                                                    "30-34";
+                                                                    "0-2"; "no";
+                                                                    "2"; "left";
+                                                                    "left_up";
+                                                                    "no";
+                                                                    "recurrence-events"]]));
+                                                              ("yes",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []))],
+                                                           [["30-39"; "premeno";
+                                                             "30-34"; "0-2";
+                                                             "no"; "2"; "left";
+                                                             "left_up"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["30-39"; "premeno";
+                                                             "30-34"; "0-2";
+                                                             "no"; "2"; "left";
+                                                             "left_up"; "no";
+                                                             "recurrence-events"]]))],
+                                                    [["30-39"; "premeno";
+                                                      "30-34"; "0-2"; "no"; "2";
+                                                      "left"; "left_up"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["30-39"; "premeno";
+                                                      "30-34"; "0-2"; "no"; "2";
+                                                      "left"; "left_up"; "no";
+                                                      "recurrence-events"]]));
+                                                ("yes",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]))],
+                                             [["30-39"; "premeno"; "30-34";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_up"; "no";
+                                               "no-recurrence-events"];
+                                              ["30-39"; "premeno"; "30-34";
+                                               "0-2"; "no"; "2"; "left";
+                                               "left_up"; "no";
+                                               "recurrence-events"]]));
+                                         ("right",
+                                          LeafNode ("no-recurrence-events",[]))],
+                                      [["30-39"; "premeno"; "30-34"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["30-39"; "premeno"; "30-34"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("40-49",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "ge40"; "30-34"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "yes";
+                                        "no-recurrence-events"]]));
+                                  ("50-59", LeafNode ("no-recurrence-events",[]));
+                                  ("60-69",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["60-69"; "ge40"; "30-34"; "0-2"; "no";
+                                        "2"; "left"; "left_up"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("70-79", LeafNode ("no-recurrence-events",[]));
+                                  ("80-89", LeafNode ("no-recurrence-events",[]));
+                                  ("90-99", LeafNode ("no-recurrence-events",[]))],
+                               [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["40-49"; "ge40"; "30-34"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "yes";
+                                 "no-recurrence-events"];
+                                ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2";
+                                 "left"; "left_up"; "no"; "recurrence-events"]]));
+                           ("12-14", LeafNode ("no-recurrence-events",[]));
+                           ("15-17", LeafNode ("no-recurrence-events",[]));
+                           ("18-20", LeafNode ("no-recurrence-events",[]));
+                           ("21-23", LeafNode ("no-recurrence-events",[]));
+                           ("24-26", LeafNode ("no-recurrence-events",[]));
+                           ("27-29", LeafNode ("no-recurrence-events",[]));
+                           ("3-5",
+                            LeafNode
+                              ("recurrence-events",
+                               [["40-49"; "premeno"; "30-34"; "3-5"; "no"; "2";
+                                 "right"; "left_up"; "no"; "recurrence-events"]]));
+                           ("30-32", LeafNode ("no-recurrence-events",[])); ...],
+                        [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "6-8"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "3-5"; "no"; "2"; "right";
+                          "left_up"; "no"; "recurrence-events"];
+                         ["30-39"; "premeno"; "30-34"; "9-11"; "no"; "2";
+                          "right"; "left_up"; "yes"; "recurrence-events"];
+                         ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "recurrence-events"]]));
+                    ("right_low",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39", LeafNode ("no-recurrence-events",[]));
+                           ("40-49",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2";
+                                 "right"; "right_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2";
+                                 "left"; "right_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("recurrence-events",
+                               [["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2";
+                                 "left"; "right_low"; "yes"; "recurrence-events"]]));
+                           ("60-69", LeafNode ("no-recurrence-events",[]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                          "right_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "left";
+                          "right_low"; "yes"; "recurrence-events"]]));
+                    ("right_up",
+                     InnerNode
+                       ("inv-nodes",
+                        map
+                          [("0-2",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("no-recurrence-events",[]));
+                                  ("20-29", LeafNode ("no-recurrence-events",[]));
+                                  ("30-39", LeafNode ("no-recurrence-events",[]));
+                                  ("40-49",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "premeno"; "30-34"; "0-2"; "no";
+                                        "2"; "right"; "right_up"; "yes";
+                                        "no-recurrence-events"]]));
+                                  ("50-59", LeafNode ("no-recurrence-events",[]));
+                                  ("60-69",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["60-69"; "ge40"; "30-34"; "0-2"; "yes";
+                                        "2"; "right"; "right_up"; "yes";
+                                        "recurrence-events"]]));
+                                  ("70-79", LeafNode ("no-recurrence-events",[]));
+                                  ("80-89", LeafNode ("no-recurrence-events",[]));
+                                  ("90-99", LeafNode ("no-recurrence-events",[]))],
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2";
+                                 "right"; "right_up"; "yes";
+                                 "no-recurrence-events"];
+                                ["60-69"; "ge40"; "30-34"; "0-2"; "yes"; "2";
+                                 "right"; "right_up"; "yes"; "recurrence-events"]]));
+                           ("12-14", LeafNode ("no-recurrence-events",[]));
+                           ("15-17", LeafNode ("no-recurrence-events",[]));
+                           ("18-20", LeafNode ("no-recurrence-events",[]));
+                           ("21-23", LeafNode ("no-recurrence-events",[]));
+                           ("24-26", LeafNode ("no-recurrence-events",[]));
+                           ("27-29", LeafNode ("no-recurrence-events",[]));
+                           ("3-5",
+                            LeafNode
+                              ("recurrence-events",
+                               [["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2";
+                                 "left"; "right_up"; "no"; "recurrence-events"]]));
+                           ("30-32", LeafNode ("no-recurrence-events",[])); ...],
+                        [["30-39"; "premeno"; "30-34"; "6-8"; "yes"; "2";
+                          "right"; "right_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "left";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "yes"; "2"; "right";
+                          "right_up"; "yes"; "recurrence-events"]]))],
+                 [["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "30-34"; "6-8"; "yes"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "6-8"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                   "right_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "yes"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "3-5"; "no"; "2"; "right";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["30-39"; "premeno"; "30-34"; "9-11"; "no"; "2"; "right";
+                   "left_up"; "yes"; "recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "left";
+                   "right_low"; "yes"; "recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "left";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "yes"; "2"; "right";
+                   "right_up"; "yes"; "recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "3-5"; "yes"; "2"; "left";
+                   "central"; "yes"; "recurrence-events"];
+                  ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "recurrence-events"]]));
+             ("35-39",
+              InnerNode
+                ("breast-quad",
+                 map
+                   [("?", LeafNode ("no-recurrence-events",[]));
+                    ("central", LeafNode ("no-recurrence-events",[]));
+                    ("left_low",
+                     LeafNode
+                       ("recurrence-events",
+                        [["50-59"; "ge40"; "35-39"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "recurrence-events"]]));
+                    ("left_up",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2";
+                          "right"; "left_up"; "yes"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"]]));
+                    ("right_low", LeafNode ("no-recurrence-events",[]));
+                    ("right_up",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["20-29"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2";
+                          "right"; "right_up"; "yes"; "no-recurrence-events"]]))],
+                 [["50-59"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["20-29"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2"; "right";
+                   "right_up"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "2"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "recurrence-events"]]));
+             ("40-44",
+              InnerNode
+                ("age",
+                 map
+                   [("10-19", LeafNode ("no-recurrence-events",[]));
+                    ("20-29", LeafNode ("no-recurrence-events",[]));
+                    ("30-39",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "yes"; "no-recurrence-events"]]));
+                    ("40-49",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "40-44"; "15-17"; "yes"; "2"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"]]));
+                    ("50-59",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "40-44"; "0-2"; "no"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "40-44"; "3-5"; "yes"; "2"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("60-69",
+                     InnerNode
+                       ("breast-quad",
+                        map
+                          [("?", LeafNode ("no-recurrence-events",[]));
+                           ("central", LeafNode ("no-recurrence-events",[]));
+                           ("left_low",
+                            LeafNode
+                              ("recurrence-events",
+                               [["60-69"; "ge40"; "40-44"; "0-2"; "no"; "2";
+                                 "right"; "left_low"; "no"; "recurrence-events"]]));
+                           ("left_up",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["60-69"; "ge40"; "40-44"; "3-5"; "no"; "2";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("right_low", LeafNode ("no-recurrence-events",[]));
+                           ("right_up", LeafNode ("no-recurrence-events",[]))],
+                        [["60-69"; "ge40"; "40-44"; "3-5"; "no"; "2"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "40-44"; "0-2"; "no"; "2"; "right";
+                          "left_low"; "no"; "recurrence-events"]]));
+                    ("70-79", LeafNode ("no-recurrence-events",[]));
+                    ("80-89", LeafNode ("no-recurrence-events",[]));
+                    ("90-99", LeafNode ("no-recurrence-events",[]))],
+                 [["50-59"; "ge40"; "40-44"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "40-44"; "3-5"; "yes"; "2"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "40-44"; "3-5"; "no"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "ge40"; "40-44"; "15-17"; "yes"; "2"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "40-44"; "0-2"; "no"; "2"; "right";
+                   "left_low"; "no"; "recurrence-events"]]));
+             ("45-49",
+              LeafNode
+                ("no-recurrence-events",
+                 [["40-49"; "premeno"; "45-49"; "0-2"; "no"; "2"; "left";
+                   "left_low"; "yes"; "no-recurrence-events"]])); ...],
+          [["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "50-54"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "15-19"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "0-4"; "0-2"; "no"; "2"; "left"; "central"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "lt40"; "15-19"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "5-9"; "0-2"; "no"; "2"; "right"; "right_up"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left"; "central";
+            "no"; "no-recurrence-events"];
+           ["20-29"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "50-54"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "15-19"; "0-2"; "no"; "2"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "5-9"; "0-2"; "no"; "2"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right"; "central";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "10-14"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "0-4"; "0-2"; "no"; "2"; "right"; "central";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "2"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "2"; "right"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "35-39"; "0-2"; "no"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "2"; "right"; "left_up"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "ge40"; "15-19"; "0-2"; "no"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["70-79"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left"; "central"; "no";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "30-34"; "6-8"; "yes"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "25-29"; "6-8"; "yes"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "0-2"; "yes"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "35-39"; "9-11"; "yes"; "2"; "right"; "right_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "6-8"; "no"; "2"; "left"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right"; "central";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "40-44"; "0-2"; "no"; "2"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "40-44"; "3-5"; "yes"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "45-49"; "0-2"; "no"; "2"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "?"; "2"; "left"; "right_low";
+            "yes"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "50-54"; "0-2"; "no"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "40-44"; "3-5"; "no"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "3-5"; "yes"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "3-5"; "no"; "2"; "right"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "ge40"; "40-44"; "15-17"; "yes"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "ge40"; "30-34"; "0-2"; "no"; "2"; "left"; "left_up"; "yes";
+            "no-recurrence-events"];
+           ["30-39"; "premeno"; "20-24"; "3-5"; "yes"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "right"; "right_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "20-24"; "3-5"; "yes"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "3-5"; "yes"; "2"; "left"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "2"; "right"; "right_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "ge40"; "25-29"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["60-69"; "ge40"; "10-14"; "0-2"; "no"; "2"; "left"; "left_low"; "no";
+            "no-recurrence-events"];
+           ["50-59"; "premeno"; "25-29"; "3-5"; "no"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "20-24"; "6-8"; "no"; "2"; "right"; "left_low";
+            "yes"; "no-recurrence-events"];
+           ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "2"; "left"; "left_up"; "yes";
+            "no-recurrence-events"];
+           ["40-49"; "premeno"; "10-14"; "0-2"; "no"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "20-24"; "0-2"; "yes"; "2"; "right"; "left_up";
+            "no"; "no-recurrence-events"];
+           ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "2"; "left"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "30-34"; "6-8"; "yes"; "2"; "left"; "left_low";
+            "no"; "no-recurrence-events"];
+           ["30-39"; "premeno"; "10-14"; "0-2"; "no"; "2"; "left"; "right_low";
+            "no"; "no-recurrence-events"];
+           ["50-59"; "premeno"; "50-54"; "0-2"; "yes"; "2"; "right"; "left_up";
+            "yes"; "no-recurrence-events"];
+           ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "2"; "left"; "left_up"; "no";
+            "no-recurrence-events"]; ...]));
+      ("3",
+       InnerNode
+         ("inv-nodes",
+          map
+            [("0-2",
+              InnerNode
+                ("tumor-size",
+                 map
+                   [("0-4",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["40-49"; "premeno"; "0-4"; "0-2"; "no"; "3"; "left";
+                          "central"; "no"; "no-recurrence-events"]]));
+                    ("10-14",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "premeno"; "10-14"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("15-19",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["30-39"; "lt40"; "15-19"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"]]));
+                           ("40-49",
+                            LeafNode
+                              ("recurrence-events",
+                               [["40-49"; "premeno"; "15-19"; "0-2"; "yes"; "3";
+                                 "right"; "left_up"; "no"; "recurrence-events"]]));
+                           ("50-59", LeafNode ("no-recurrence-events",[]));
+                           ("60-69",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["60-69"; "ge40"; "15-19"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["60-69"; "ge40"; "15-19"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["30-39"; "lt40"; "15-19"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "15-19"; "0-2"; "yes"; "3";
+                          "right"; "left_up"; "no"; "recurrence-events"]]));
+                    ("20-24",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            InnerNode
+                              ("breast-quad",
+                               map
+                                 [("?", LeafNode ("no-recurrence-events",[]));
+                                  ("central",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["30-39"; "premeno"; "20-24"; "0-2"; "no";
+                                        "3"; "left"; "central"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("left_low",
+                                   LeafNode ("no-recurrence-events",[]));
+                                  ("left_up",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["30-39"; "premeno"; "20-24"; "0-2"; "no";
+                                        "3"; "left"; "left_up"; "yes";
+                                        "recurrence-events"]]));
+                                  ("right_low",
+                                   LeafNode ("no-recurrence-events",[]));
+                                  ("right_up",
+                                   LeafNode ("no-recurrence-events",[]))],
+                               [["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "central"; "no"; "no-recurrence-events"];
+                                ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "yes"; "recurrence-events"]]));
+                           ("40-49",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "3";
+                                 "right"; "left_low"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"]]));
+                           ("60-69",
+                            LeafNode
+                              ("recurrence-events",
+                               [["60-69"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "right"; "left_low"; "no"; "recurrence-events"]]));
+                           ("70-79",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["70-79"; "ge40"; "20-24"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"]]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["70-79"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "central"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "3"; "right";
+                          "left_low"; "yes"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "3"; "right";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "yes"; "recurrence-events"]]));
+                    ("25-29",
+                     InnerNode
+                       ("breast",
+                        map
+                          [("left",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("recurrence-events",[]));
+                                  ("20-29", LeafNode ("recurrence-events",[]));
+                                  ("30-39", LeafNode ("recurrence-events",[]));
+                                  ("40-49",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "3"; "left"; "right_up"; "no";
+                                        "recurrence-events"];
+                                       ["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "3"; "left"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("50-59",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["50-59"; "ge40"; "25-29"; "0-2"; "no";
+                                        "3"; "left"; "right_up"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("60-69",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["60-69"; "ge40"; "25-29"; "0-2"; "no";
+                                        "3"; "left"; "right_low"; "yes";
+                                        "recurrence-events"];
+                                       ["60-69"; "ge40"; "25-29"; "0-2"; "no";
+                                        "3"; "left"; "left_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("70-79", LeafNode ("recurrence-events",[]));
+                                  ("80-89", LeafNode ("recurrence-events",[]));
+                                  ("90-99", LeafNode ("recurrence-events",[]))],
+                               [["50-59"; "ge40"; "25-29"; "0-2"; "no"; "3";
+                                 "left"; "right_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3";
+                                 "left"; "right_up"; "no"; "recurrence-events"];
+                                ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3";
+                                 "left"; "right_low"; "yes"; "recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "recurrence-events"];
+                                ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "recurrence-events"]]));
+                           ("right",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("no-recurrence-events",[]));
+                                  ("20-29", LeafNode ("no-recurrence-events",[]));
+                                  ("30-39", LeafNode ("no-recurrence-events",[]));
+                                  ("40-49",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "premeno"; "25-29"; "0-2"; "no";
+                                        "3"; "right"; "left_up"; "yes";
+                                        "no-recurrence-events"]]));
+                                  ("50-59",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["50-59"; "premeno"; "25-29"; "0-2"; "no";
+                                        "3"; "right"; "left_low"; "yes";
+                                        "recurrence-events"]]));
+                                  ("60-69",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["60-69"; "ge40"; "25-29"; "0-2"; "no";
+                                        "3"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["60-69"; "ge40"; "25-29"; "0-2"; "no";
+                                        "3"; "right"; "left_low"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("70-79", LeafNode ("no-recurrence-events",[]));
+                                  ("80-89", LeafNode ("no-recurrence-events",[]));
+                                  ("90-99", LeafNode ("no-recurrence-events",[]))],
+                               [["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"];
+                                ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "3";
+                                 "right"; "left_low"; "yes"; "recurrence-events"]]))],
+                        [["50-59"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "yes"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "left";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left";
+                          "right_low"; "yes"; "recurrence-events"];
+                         ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "recurrence-events"];
+                         ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "3"; "right";
+                          "left_low"; "yes"; "recurrence-events"]]));
+                    ("30-34",
+                     InnerNode
+                       ("breast-quad",
+                        map
+                          [("?",
+                            LeafNode
+                              ("recurrence-events",
+                               [["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "?"; "no"; "recurrence-events"]]));
+                           ("central",
+                            LeafNode
+                              ("recurrence-events",
+                               [["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "central"; "no"; "recurrence-events"]]));
+                           ("left_low",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "left_low"; "no";
+                                 "no-recurrence-events"]]));
+                           ("left_up",
+                            InnerNode
+                              ("irradiat",
+                               map
+                                 [("?", LeafNode ("no-recurrence-events",[]));
+                                  ("no",
+                                   LeafNode
+                                     ("no-recurrence-events",
+                                      [["40-49"; "premeno"; "30-34"; "0-2"; "no";
+                                        "3"; "left"; "left_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["50-59"; "lt40"; "30-34"; "0-2"; "no";
+                                        "3"; "right"; "left_up"; "no";
+                                        "no-recurrence-events"]]));
+                                  ("yes",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["50-59"; "premeno"; "30-34"; "0-2"; "no";
+                                        "3"; "right"; "left_up"; "yes";
+                                        "recurrence-events"];
+                                       ["60-69"; "ge40"; "30-34"; "0-2"; "no";
+                                        "3"; "right"; "left_up"; "yes";
+                                        "recurrence-events"]]))],
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"];
+                                ["50-59"; "lt40"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "yes"; "recurrence-events"];
+                                ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "left_up"; "yes"; "recurrence-events"]]));
+                           ("right_low", LeafNode ("no-recurrence-events",[]));
+                           ("right_up",
+                            InnerNode
+                              ("age",
+                               map
+                                 [("10-19", LeafNode ("recurrence-events",[]));
+                                  ("20-29", LeafNode ("recurrence-events",[]));
+                                  ("30-39", LeafNode ("recurrence-events",[]));
+                                  ("40-49",
+                                   InnerNode
+                                     ("node-caps",
+                                      map
+                                        [("?", LeafNode ("recurrence-events",[]));
+                                         ("no",
+                                          InnerNode
+                                            ("breast",
+                                             map
+                                               [("left",
+                                                 LeafNode
+                                                   ("no-recurrence-events",[]));
+                                                ("right",
+                                                 InnerNode
+                                                   ("irradiat",
+                                                    map
+                                                      [("?",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []));
+                                                       ("no",
+                                                        InnerNode
+                                                          ("menopause",
+                                                           map
+                                                             [("ge40",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("lt40",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  []));
+                                                              ("premeno",
+                                                               LeafNode
+                                                                 ("no-recurrence-events",
+                                                                  [["40-49";
+                                                                    "premeno";
+                                                                    "30-34";
+                                                                    "0-2"; "no";
+                                                                    "3"; "right";
+                                                                    "right_up";
+                                                                    "no";
+                                                                    "no-recurrence-events"];
+                                                                   ["40-49";
+                                                                    "premeno";
+                                                                    "30-34";
+                                                                    "0-2"; "no";
+                                                                    "3"; "right";
+                                                                    "right_up";
+                                                                    "no";
+                                                                    "recurrence-events"]]))],
+                                                           [["40-49"; "premeno";
+                                                             "30-34"; "0-2";
+                                                             "no"; "3"; "right";
+                                                             "right_up"; "no";
+                                                             "no-recurrence-events"];
+                                                            ["40-49"; "premeno";
+                                                             "30-34"; "0-2";
+                                                             "no"; "3"; "right";
+                                                             "right_up"; "no";
+                                                             "recurrence-events"]]));
+                                                       ("yes",
+                                                        LeafNode
+                                                          ("no-recurrence-events",
+                                                           []))],
+                                                    [["40-49"; "premeno";
+                                                      "30-34"; "0-2"; "no"; "3";
+                                                      "right"; "right_up"; "no";
+                                                      "no-recurrence-events"];
+                                                     ["40-49"; "premeno";
+                                                      "30-34"; "0-2"; "no"; "3";
+                                                      "right"; "right_up"; "no";
+                                                      "recurrence-events"]]))],
+                                             [["40-49"; "premeno"; "30-34";
+                                               "0-2"; "no"; "3"; "right";
+                                               "right_up"; "no";
+                                               "no-recurrence-events"];
+                                              ["40-49"; "premeno"; "30-34";
+                                               "0-2"; "no"; "3"; "right";
+                                               "right_up"; "no";
+                                               "recurrence-events"]]));
+                                         ("yes",
+                                          LeafNode
+                                            ("recurrence-events",
+                                             [["40-49"; "premeno"; "30-34";
+                                               "0-2"; "yes"; "3"; "right";
+                                               "right_up"; "no";
+                                               "recurrence-events"]]))],
+                                      [["40-49"; "premeno"; "30-34"; "0-2"; "no";
+                                        "3"; "right"; "right_up"; "no";
+                                        "no-recurrence-events"];
+                                       ["40-49"; "premeno"; "30-34"; "0-2"; "no";
+                                        "3"; "right"; "right_up"; "no";
+                                        "recurrence-events"];
+                                       ["40-49"; "premeno"; "30-34"; "0-2";
+                                        "yes"; "3"; "right"; "right_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("50-59",
+                                   LeafNode
+                                     ("recurrence-events",
+                                      [["50-59"; "premeno"; "30-34"; "0-2"; "no";
+                                        "3"; "left"; "right_up"; "no";
+                                        "recurrence-events"]]));
+                                  ("60-69", LeafNode ("recurrence-events",[]));
+                                  ("70-79", LeafNode ("recurrence-events",[]));
+                                  ("80-89", LeafNode ("recurrence-events",[]));
+                                  ("90-99", LeafNode ("recurrence-events",[]))],
+                               [["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "right_up"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "left"; "right_up"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3";
+                                 "right"; "right_up"; "no"; "recurrence-events"];
+                                ["40-49"; "premeno"; "30-34"; "0-2"; "yes"; "3";
+                                 "right"; "right_up"; "no"; "recurrence-events"]]))],
+                        [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "right_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "lt40"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "?"; "no"; "recurrence-events"];
+                         ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "right_up"; "no"; "recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "central"; "no"; "recurrence-events"];
+                         ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "yes"; "recurrence-events"];
+                         ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "yes"; "recurrence-events"];
+                         ["40-49"; "premeno"; "30-34"; "0-2"; "yes"; "3";
+                          "right"; "right_up"; "no"; "recurrence-events"]]));
+                    ("35-39",
+                     InnerNode
+                       ("age",
+                        map
+                          [("10-19", LeafNode ("no-recurrence-events",[]));
+                           ("20-29", LeafNode ("no-recurrence-events",[]));
+                           ("30-39",
+                            LeafNode
+                              ("recurrence-events",
+                               [["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no"; "recurrence-events"];
+                                ["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no"; "recurrence-events"]]));
+                           ("40-49",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3";
+                                 "right"; "left_up"; "yes";
+                                 "no-recurrence-events"];
+                                ["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3";
+                                 "right"; "left_low"; "yes";
+                                 "no-recurrence-events"]]));
+                           ("50-59",
+                            LeafNode
+                              ("no-recurrence-events",
+                               [["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3";
+                                 "left"; "left_low"; "no";
+                                 "no-recurrence-events"];
+                                ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3";
+                                 "left"; "left_up"; "no"; "no-recurrence-events"]]));
+                           ("60-69", LeafNode ("no-recurrence-events",[]));
+                           ("70-79", LeafNode ("no-recurrence-events",[]));
+                           ("80-89", LeafNode ("no-recurrence-events",[]));
+                           ("90-99", LeafNode ("no-recurrence-events",[]))],
+                        [["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3";
+                          "right"; "left_up"; "yes"; "no-recurrence-events"];
+                         ["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3";
+                          "right"; "left_low"; "yes"; "no-recurrence-events"];
+                         ["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "recurrence-events"];
+                         ["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3"; "left";
+                          "left_low"; "no"; "recurrence-events"]]));
+                    ("40-44",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "left";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "left";
+                          "right_up"; "no"; "no-recurrence-events"]]));
+                    ("45-49", LeafNode ("no-recurrence-events",[])); ...],
+                 [["30-39"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "0-4"; "0-2"; "no"; "3"; "left";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "premeno"; "10-14"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["70-79"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "35-39"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "ge40"; "20-24"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "40-44"; "0-2"; "no"; "3"; "left";
+                   "right_up"; "no"; "no-recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3"; "left";
+                   "central"; "no"; "no-recurrence-events"];
+                  ["50-59"; "lt40"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "15-19"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["30-39"; "lt40"; "15-19"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "20-24"; "0-2"; "no"; "3"; "right";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3"; "right";
+                   "left_up"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "35-39"; "0-2"; "yes"; "3"; "right";
+                   "left_low"; "yes"; "no-recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "right";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "30-34"; "0-2"; "no"; "3"; "left"; "?"; "no";
+                   "recurrence-events"];
+                  ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "left";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "central"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "left";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left";
+                   "right_low"; "yes"; "recurrence-events"];
+                  ["60-69"; "ge40"; "20-24"; "0-2"; "no"; "3"; "right";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["50-59"; "premeno"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "yes"; "recurrence-events"];
+                  ["60-69"; "ge40"; "30-34"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "yes"; "recurrence-events"];
+                  ["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "25-29"; "0-2"; "no"; "3"; "left";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "50-54"; "0-2"; "no"; "3"; "right";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "0-2"; "yes"; "3"; "right";
+                   "right_up"; "no"; "recurrence-events"];
+                  ["60-69"; "ge40"; "25-29"; "0-2"; "no"; "3"; "left"; "left_up";
+                   "no"; "recurrence-events"];
+                  ["30-39"; "premeno"; "35-39"; "0-2"; "no"; "3"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["50-59"; "premeno"; "25-29"; "0-2"; "no"; "3"; "right";
+                   "left_low"; "yes"; "recurrence-events"];
+                  ["40-49"; "premeno"; "15-19"; "0-2"; "yes"; "3"; "right";
+                   "left_up"; "no"; "recurrence-events"];
+                  ["30-39"; "premeno"; "20-24"; "0-2"; "no"; "3"; "left";
+                   "left_up"; "yes"; "recurrence-events"]]));
+             ("12-14",
+              LeafNode
+                ("recurrence-events",
+                 [["40-49"; "premeno"; "15-19"; "12-14"; "no"; "3"; "right";
+                   "right_low"; "yes"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "12-14"; "yes"; "3"; "left";
+                   "left_up"; "yes"; "recurrence-events"];
+                  ["40-49"; "ge40"; "25-29"; "12-14"; "yes"; "3"; "left";
+                   "right_low"; "yes"; "recurrence-events"]]));
+             ("15-17",
+              InnerNode
+                ("menopause",
+                 map
+                   [("ge40",
+                     LeafNode
+                       ("no-recurrence-events",
+                        [["50-59"; "ge40"; "25-29"; "15-17"; "yes"; "3"; "right";
+                          "left_up"; "no"; "no-recurrence-events"];
+                         ["50-59"; "ge40"; "35-39"; "15-17"; "no"; "3"; "left";
+                          "left_low"; "no"; "no-recurrence-events"]]));
+                    ("lt40", LeafNode ("recurrence-events",[]));
+                    ("premeno",
+                     LeafNode
+                       ("recurrence-events",
+                        [["40-49"; "premeno"; "30-34"; "15-17"; "yes"; "3";
+                          "left"; "left_low"; "no"; "recurrence-events"];
+                         ["40-49"; "premeno"; "15-19"; "15-17"; "yes"; "3";
+                          "left"; "left_low"; "no"; "recurrence-events"];
+                         ["50-59"; "premeno"; "35-39"; "15-17"; "yes"; "3";
+                          "right"; "right_up"; "no"; "recurrence-events"]]))],
+                 [["50-59"; "ge40"; "25-29"; "15-17"; "yes"; "3"; "right";
+                   "left_up"; "no"; "no-recurrence-events"];
+                  ["50-59"; "ge40"; "35-39"; "15-17"; "no"; "3"; "left";
+                   "left_low"; "no"; "no-recurrence-events"];
+                  ["40-49"; "premeno"; "30-34"; "15-17"; "yes"; "3"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["40-49"; "premeno"; "15-19"; "15-17"; "yes"; "3"; "left";
+                   "left_low"; "no"; "recurrence-events"];
+                  ["50-59"; "premeno"; "35-39"; "15-17"; "yes"; "3"; "right";
+                   "right_up"; "no"; "recurrence-events"]]));
+             ("18-20", LeafNode ("recurrence-events",[]));
+             ("21-23", LeafNode ("recurrence-events",[]));
+             ("24-26",
+              LeafNode
+                ("recurrence-events",
+                 [["60-69"; "ge40"; "20-24"; "24-26"; "yes"; ...]; ...])); ...],
+          ...)); ...],...)
