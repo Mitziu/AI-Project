@@ -8,7 +8,6 @@ This part contains
 git clone the repository. 
 
 ### Running the program
-* Run the program in [VisualStudio IDE](https://www.visualstudio.com/)
 * In the terminal navigate to the directory where the project is installed. 
 * From here naviate to the folder `DecisionTreeLearning-G7\\DecisionTreeLearning-G7\\bin\\Realease`
 * On reching this file path you'll see the execution file ` DecisionTreeLearning-G7.exe`. 
