@@ -163,12 +163,13 @@ let getMaps jsonFileName =
 
 [<EntryPoint>]
 let main argv = 
-    
+    //let inputTreeFile = argv.[0].Trim()
     let jsonFile = argv.[0].Trim()
     let dataFile = argv.[1].Trim()
     let dataset = getSanitizedData dataFile 
     let domMap, indexMap = getMaps jsonFile
     let attrMap = Map.remove "class" domMap 
+
 
     //printfn "%A" attrMap
     //printfn "%A" indexMap
@@ -176,11 +177,29 @@ let main argv =
     //printfn "%s" jsonFile
     //printfn "%s" dataFile
     
+    let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 true
+    printfn "%O" dtlTest
+
+    let inputTreeFile = argv.[0].Trim()
+    let dataFile = argv.[1].Trim()
+  //  let dataset = getSanitizedData dataFile 
+    //let domMap, indexMap = getMaps jsonFile
+    //let attrMap = Map.remove "class" domMap 
+
+    //printfn "%A" attrMap
+    //printfn "%A" indexMap
+    //printfn "%A" dataset
+    //printfn "%s" jsonFile
+    //printfn "%s" dataFile
+ //   let treePath = baseDirectory + "\\Data\\+ inputTreeFile
+  //  printfn "%s" treePath
     //let dtlTest = DTL.dtl dataset attrMap [] indexMap -1 true
     //let bestModel = DTL.find_best_model dataset 4 attrMap indexMap
-    let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
+    //let accuracy = DTL.k_fold_validation dataset 4 attrMap indexMap true -1
     //printfn "%O" dtlTest
-    printfn "%f %f" (fst accuracy) (snd accuracy)
+   // printfn "%f %f" (fst accuracy) (snd accuracy)
     //printfn "%A" (domMap.Item("a1"))
-    //printfn "%A" argv
+    //printfn "%A" argv 
+
     0 // return an integer exit code
+ 
